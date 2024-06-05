@@ -17,7 +17,7 @@ $_SESSION['employe'] = $company_row['employe'];
 
 
 //contract information
-$contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contrat WHERE comp_id='$company_id'");
+$contract_query = mysqli_query($conn, "SELECT free_id, ending, date, state FROM contrat WHERE comp_id='$company_id'");
 
 
 ?>
@@ -119,7 +119,7 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contra
                     <h3 class="translate">Contrats</h3>
                     <a class="download">
                         <i class='bx bx-cloud-download'></i>
-                        <p>Rapport</p>
+                        <p onclick="downloadRapport()">Rapport</p>
                     </a>
                 </div>
 
@@ -130,7 +130,7 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contra
                         <th class="translate">Type</th>
                         <th class="translate">Debut</th>
                         <th class="translate">Fin</th>
-                        <th class="translate" colspan="2">Action</th>
+                        <!-- <th class="translate" colspan="2">Action</th> -->
 
                     </tr>
 
@@ -152,12 +152,12 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contra
                                 <p class="translate"><?php echo $contract['state']?></p>
                             </td>
                             <td class="translate">contrat</td>
-                            <td class="translate"><?php echo $contract['state']?></td>
+                            <td class="translate"><?php echo $contract['date']?></td>
                             <td class="translate"><?php echo $contract['ending']?></td>
-                            <td>
+                            <!-- <td>
                                 <a href=""><i class='bx bx-pencil'></i></a>
                                 <a href=""><i class='bx bx-trash'></i></a>
-                            </td>
+                            </td> -->
 
                         </tr>
                     <?php
@@ -223,6 +223,14 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contra
 
 
     <!-- Custom js -->
+    <script src="../main_assets/js/table2excel.js"></script>
+    <script>
+        function downloadRapport(){
+
+            var table2Excel = new Table2Excel();
+            table2Excel.export(document.querySelectorAll("table"))
+        }
+    </script>
     <script src="admin_dashboard_assets/js/Admin_dashboard.js"></script>
     <!-- <script src="freelancer_dashboard_assets/js/translate.js"></script> -->
 
