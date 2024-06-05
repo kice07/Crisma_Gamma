@@ -70,7 +70,7 @@ if ($_POST['action'] == "signup") {
                                         //Content
                                         $mail->isHTML(true);                                  //Set email format to HTML
                                         $mail->Subject = 'no reply';
-                                        $mail->Body    = 'Voici le lien de verification de vôtre compte <b><a href="http://localhost/Crisma_Gamma/Freelancer_Dashboard/freelancer.php?verification=' . $token . '&agbrd=' . $ran_id . '">http://localhost/Crisma_Gamma/Freelancer_Dashboard/index.php?verification=' . $token . '</a></b>';
+                                        $mail->Body    = 'Voici le lien de verification de vôtre compte <b><a href="http://crismawork.com/Freelancer_Dashboard/freelancer.php?verification=' . $token . '&agbrd=' . $ran_id . '">http://crismawork/Freelancer_Dashboard/index.php?verification=' . $token . '</a></b>';
 
                                         $mail->send();
 
@@ -151,7 +151,7 @@ if ($_POST['action'] == "signup") {
                                             //Content
                                             $mail->isHTML(true);                                  //Set email format to HTML
                                             $mail->Subject = 'no reply';
-                                            $mail->Body    = 'Voici le lien de verification de vôtre compte <b><a href="http://localhost/Crisma_Gamma/Admin_Dashboard/index.php?verification=' . $token . '&agbd=' . $ran_id . '">http://localhost/Crisma_Gamma/Admin_Dashboard/index.php?verification=' . $token . '</a></b>';
+                                            $mail->Body    = 'Voici le lien de verification de vôtre compte <b><a href="http://crismawork.com/Admin_Dashboard/index.php?verification=' . $token . '&agbd=' . $ran_id . '">http://crismawork.com/Admin_Dashboard/index.php?verification=' . $token . '</a></b>';
 
                                             $mail->send();
 
