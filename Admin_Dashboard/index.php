@@ -17,7 +17,7 @@ $_SESSION['employe'] = $company_row['employe'];
 
 
 //contract information
-
+$contract_query = mysqli_query($conn, "SELECT * free_id, ending, state FROM contrat WHERE comp_id='$company_id'");
 
 
 ?>
@@ -45,11 +45,9 @@ $_SESSION['employe'] = $company_row['employe'];
 
 <body>
 
-   
+
     <div class="topNav">
-        <img 
-        src="admin_dashboard_assets/images/other/logo_strokes.png"
-        class="stroke" alt="">
+        <img src="admin_dashboard_assets/images/other/logo_strokes.png" class="stroke" alt="">
         <!-- navbar -->
         <?php include("navbar.php") ?>
 
@@ -135,68 +133,40 @@ $_SESSION['employe'] = $company_row['employe'];
                         <th class="translate" colspan="2">Action</th>
 
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="admin_dashboard_assets/images/Elon.jpg" alt="">
-                            <div class="about">
-                                <p>Ehouman</p>
-                                <p class="translate">Technologie et Ia</p>
-                            </div>
-                        </td>
-                        <td class="ongoing">
-                            <p class="translate">en cours</p>
-                        </td>
-                        <td class="translate">contrat</td>
-                        <td class="translate">11/10/23</td>
-                        <td class="translate">02/04/25</td>
-                        <td>
-                            <a href=""><i class='bx bx-pencil'></i></a>
-                            <a href=""><i class='bx bx-trash'></i></a>
-                        </td>
 
-                    </tr>
+                    <?php
+                    while ($contract = mysqli_fetch_assoc($contract_query)) {
+                        $actual_free_id = $contract['free_id'];
+                        $free_info_query = mysqli_query($conn, "SELECT nom, image FROM freelancer WHERE id='$actual_free_id'");
+                        $actual_free = mysqli_fetch_assoc($free_info_query);
+                    ?>
+                        <tr>
+                            <td>
+                                <img src="../Freelancer_Dashboard/freelancer_dashboard_assets/images/freelancer/<?php echo $actual_free['image']?>" alt="">
+                                <div class="about">
+                                    <p><?php echo $actual_free['nom']?></p>
+                                    <p class="translate">Freelancer</p>
+                                </div>
+                            </td>
+                            <td class="ongoing">
+                                <p class="translate"><?php echo $contract['state']?></p>
+                            </td>
+                            <td class="translate">contrat</td>
+                            <td class="translate"><?php echo $contract['state']?></td>
+                            <td class="translate"><?php echo $contract['ending']?></td>
+                            <td>
+                                <a href=""><i class='bx bx-pencil'></i></a>
+                                <a href=""><i class='bx bx-trash'></i></a>
+                            </td>
 
-                    <tr>
-                        <td>
-                            <img src="admin_dashboard_assets/images/Elon.jpg" alt="">
-                            <div class="about">
-                                <p>Ehouman</p>
-                                <p class="translate">Technologie et Ia</p>
-                            </div>
-                        </td>
-                        <td class="ended">
-                            <p class="translate">Terminé</p>
-                        </td>
-                        <td class="translate">contrat</td>
-                        <td class="translate">11/10/23</td>
-                        <td class="translate">02/04/25</td>
-                        <td>
-                            <a href=""><i class='bx bx-pencil'></i></a>
-                            <a href=""><i class='bx bx-trash'></i></a>
-                        </td>
+                        </tr>
+                    <?php
+                    }
 
-                    </tr>
+                    ?>
 
-                    <tr>
-                        <td>
-                            <img src="admin_dashboard_assets/images/Elon.jpg" alt="">
-                            <div class="about">
-                                <p>Ehouman</p>
-                                <p class="translate">Technologie et Ia</p>
-                            </div>
-                        </td>
-                        <td class="failed">
-                            <p class="translate">Annulé</p>
-                        </td>
-                        <td class="translate">contrat</td>
-                        <td class="translate">11/10/23</td>
-                        <td class="translate">02/04/25</td>
-                        <td>
-                            <a href=""><i class='bx bx-pencil'></i></a>
-                            <a href=""><i class='bx bx-trash'></i></a>
-                        </td>
 
-                    </tr>
+
 
 
                 </table>
