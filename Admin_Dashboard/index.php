@@ -56,7 +56,7 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contra
             <div class="content">
                 <h3 class="translate">Bienvenu Kice Corp</h3>
                 <div class="options">
-                    <a href="offer_list.php">
+                    <a class="resume" href="offer_list.php">
                         <p class="translate">Vos offes</p>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
