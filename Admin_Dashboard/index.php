@@ -17,7 +17,7 @@ $_SESSION['employe'] = $company_row['employe'];
 
 
 //contract information
-$contract_query = mysqli_query($conn, "SELECT * free_id, ending, state FROM contrat WHERE comp_id='$company_id'");
+$contract_query = mysqli_query($conn, "SELECT free_id, ending, state FROM contrat WHERE comp_id='$company_id'");
 
 
 ?>
