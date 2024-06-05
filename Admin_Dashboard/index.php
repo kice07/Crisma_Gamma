@@ -18,7 +18,8 @@ $_SESSION['employe'] = $company_row['employe'];
 
 //contract information
 $contract_query = mysqli_query($conn, "SELECT free_id, ending, date, state FROM contrat WHERE comp_id='$company_id'");
-
+$contract_number =mysqli_num_rows(mysqli_query($conn, "SELECT COUNT(*) AS count FROM contrat WHERE state = 'en cours'"));
+$offer_number =mysqli_num_rows(mysqli_query($conn, "SELECT COUNT(*) AS count FROM jobs WHERE company_id = '$company_id'"));
 
 ?>
 
@@ -82,7 +83,7 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, date, state FROM 
                         </div>
                         <p class="translate label">contrat en cours</p>
                         <div class="line">
-                            <p>10</p>
+                            <p><?php echo $contract_number?></p>
                             <div class="comparison">
                                 <i class='bx bx-up-arrow-alt'></i>
                                 <span>20%</span>
@@ -98,7 +99,7 @@ $contract_query = mysqli_query($conn, "SELECT free_id, ending, date, state FROM 
                         </div>
                         <p class="translate label"> vos offres</p>
                         <div class="line">
-                            <p>30</p>
+                            <p><?php echo $offer_number?></p>
                             <div class="comparison">
                                 <i class='bx bx-up-arrow-alt'></i>
                                 <span>20%</span>
