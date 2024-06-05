@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --main-orange: #fe6c4c;
+    --second-orange: #faede8;
+    --main-blue: #19202b;
+    --main-grey: #969999;
+    --second-grey: #d3d8d8;
+    --third-grey: #eff0f2;
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --main: #f3d3c0;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: rgb(54, 57, 73);
+    --light-dark: rgba(54, 57, 73, 0.5);
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --primary-clr: #b38add;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Livvic', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198, 196, 196) var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+.invalid {
+    border: 1px solid var(--danger);
+}
+
+.bx {
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #181a1e;
+    --grey: #25252c;
+    --dark: #fbfbfb
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.reverse_rotate {
+    transform: rotate(-180deg);
+}
+
+.selected {
+    color: #ea6f11;
+}
+
+.blured {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 225, 225, 0.18);
+}
+
+.show {
+    display: block;
+}
+
+.bxs-bookmark{
+    color: var(--main-orange);
+    font-size: .9em;
+}
+
+
+
+
+/* =================== MAIN PART =========== */
+.big_container{
+    position: relative;
+}
+.veil{
+    display: none;
+    position: absolute;
+
+    height:100% ;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 3;
+}
+.main_content {
+    display: flex;
+    width: 100%;
+    /* height: 80vh; */
+    padding: 2%;
+    overflow: hidden;
+
+}
+
+.banner {
+    background-color: var(--main-blue);
+    position: relative;
+    padding: 2% 3%;
+    width: 100%;
+}
+
+.banner h3 {
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 2.3em;
+    width: 70%;
+    color: white;
+    margin-bottom: 2%;
+}
+
+.banner i,
+.banner span,
+.banner .apply{
+    color: white;
+}
+
+.banner .job_details {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* background-color: powderblue; */
+
+}
+
+.banner .job_details .bloc:first-child {
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
+    width: 70%;
+
+}
+
+.banner .job_details .bloc:first-child .part{
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    padding-right: 2%;
+    border-right:1px solid white;
+}
+.banner .job_details .bloc:first-child .part:last-child{
+    border-right:0;
+}
+
+.banner .job_details .bloc:first-child .part i{
+    font-size: 1.5em;
+}
+
+.banner .job_details .bloc:first-child .part span{
+    font-weight: bold;
+}
+
+.banner .job_details .bloc:last-child {
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
+    justify-content: right;
+    width: 30%;
+   
+}
+
+.banner .job_details .bloc:last-child .apply{
+   border-radius: 10px;
+   padding: 3% 5%;
+   background-color: var(--main-orange);
+   color: white;
+   font-weight: bold;
+   transition: all .3s ease-in-out;
+}
+.banner .job_details .bloc:last-child .apply:hover{
+    background-color:#fd785a;
+    color: white;
+    cursor: pointer;
+}
+ 
+
+.banner .job_details .bloc:last-child i{
+    border-radius: 10px;
+    padding: 3% 5%;
+    background-color: white;
+    color: var(--main-orange);
+    font-weight: bold;
+}
+.banner .job_details .bloc:last-child i:last-child{
+    display: none;
+    font-size: 1.1em;
+}
+
+.banner .job_details .bloc:last-child i:hover{
+  cursor: pointer;
+
+}
+
+.banner .job_details .bloc:last-child i:focus{
+    background-color: green;
+    color: var(--main-orange);
+
+}
+
+/* =========Main_content======== */
+.left{
+    /* background-color: red; */
+    width: 65%;
+    padding: 1%;
+    border-right: 1px dashed var(--main-grey);
+    
+}
+
+.left h3,
+.right .title{
+    font-family: 'Prompt';
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 2%;
+}
+
+.left .part h3{
+    font-family: 'Prompt';
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 2%;
+}
+
+.left .content{
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+ 
+.left .content p{
+    padding-bottom: 1%;
+}
+ 
+
+/* -------- right */
+.right{
+    padding-left: 2%;
+    margin-bottom: 2%;
+    width: 35%;
+    
+
+    /* position: sticky;
+    right: 0%;
+    top: 0%; */
+
+}
+
+.right .job_bloc{
+    /* background-color: red; */
+   
+    padding-left: 15%;
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-column-gap: 18px;
+    grid-row-gap: 28px;
+   
+}
+
+
+.right .job_bloc .job {
+    position: relative;
+    border-radius: 16px;
+    padding: 2% 0%;
+    padding-top: 0;
+    border: 1px solid var(--main-grey);
+    height: 220px;
+    width:300px;
+    transition: all .3s ease;
+}
+
+
+.main_content .right .job_bloc .job:hover{
+    cursor: pointer;
+}
+
+.right .job_bloc .job .top {
+    margin-bottom: 7%;
+    padding: 0% 3%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid var(--main-grey);
+    border-radius: 16px;
+    transition: all .3s ease;
+}
+.right .job_bloc .job:hover .top{
+    cursor: pointer;
+    background-color: var(--main-blue);
+}
+
+
+.right .job_bloc .job .row.first {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.right .job_bloc .job .row.first h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--main-blue);
+}
+
+.right .job_bloc .job:hover .row.first h3 {
+    color: white;
+}
+
+
+.right .job_bloc .job .row.first i {
+    padding: 1% 2%;
+    border-radius: 50%;
+    border: 1px solid var(--main-grey);
+}
+
+.right .job_bloc .job:hover .row.first i {
+    border: 1px solid white;
+    background-color: white;
+}
+
+.right .job_bloc .job .row.second .match {
+    color: var(--main-blue);
+}
+.right .job_bloc .job:hover .row.second .match {
+    color: var(--second-grey);
+
+}
+
+.right .job_bloc .job .row.second .job_detail {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 3%;
+    margin-top: 6%;
+}
+
+.right .job_bloc .job .row.second .job_detail span {
+    padding: 1%;
+    border-radius: 5px;
+    background-color: var(--third-grey);
+    font-weight: bold;
+    color: var(--main-blue);
+}
+
+
+.right .job_bloc .job .row.second .delay {
+    color: var(--second-grey);
+    margin-right: 2%;
+}
+
+.right .job_bloc .job .row.second .applier {
+    color: var(--main-orange);
+}
+
+.right .job_bloc .job .row.second .applier i {
+    font-size: .7em;
+}
+
+.right .job_bloc .job .bottom {
+    margin-bottom: 7%;
+    padding: 0% 3%;
+    padding-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right .job_bloc .job .bottom .salary {
+    width: 40%;
+}
+
+.right .job_bloc .job .bottom .salary span:first-child {
+    margin-right: 1%;
+    color: var(--main-blue);
+    font-weight: bold;
+}
+
+.right .job_bloc .job .bottom .salary span:last-child {
+   
+    color: var(--main-grey);
+}
+.right .job_bloc .job .bottom a {
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+    padding: 1% 2%;
+    color: var(--main-blue);
+    transition: all.3s ease-in-out;
+}
+
+.right .job_bloc .job .bottom a:hover {
+    background-color: var(--main-blue);
+    color: white;
+}
+
+/* ----------cv_popup------- */
+.cv_popup{
+    display: none;
+    z-index: 4;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    height: 40%;
+    width: 40%;
+    transition: all .3s ease-in-out;
+
+}
+
+
+.cv_popup .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2% 2%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border:1px solid var(--main-grey) ;
+
+}
+
+.cv_popup .head p{
+    cursor: pointer;
+    /* font-family: 'Prompt'; */
+    font-size:1.2em ;
+}
+.cv_popup .head i:hover{
+    cursor: pointer;
+}
+
+.cv_popup .mid{
+    padding: 1% 5%;
+    background-color: rgb(248, 248, 248);
+    border-left:1px solid var(--main-grey) ;
+    border-right:1px solid var(--main-grey) ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 200px;
+}
+
+.cv_popup .mid ul li{
+    margin-bottom: 3%;
+}
+.cv_popup .mid ul li:last-child{
+   margin-bottom: 0%;
+}
+
+.cv_popup .bottom{
+    display: flex;
+    justify-content: right;
+    background-color: white;
+  
+    border:1px solid var(--main-grey) ;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 2% 2%;
+}
+.cv_popup .bottom span{
+    /* position: absolute; */
+    padding: 1% 3%;
+    right: 2%;
+    background-color: var(--main-orange);
+    color: white;
+
+    font-weight: bold;
+    /* font-family: "Prompt"; */
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.cv_popup .bottom span:hover{
+    background-color:white;
+    color: var(--main-orange);
+    border: 1px solid var(--second-grey);
+}

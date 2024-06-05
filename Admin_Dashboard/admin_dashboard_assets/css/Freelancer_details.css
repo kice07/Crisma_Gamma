@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+:root {
+    --main-orange: #fe6c4c;
+    --second-orange: #faede8;
+    --main-blue: #19202b;
+    --main-grey: #969999;
+    --second-grey: #d3d8d8;
+    --third-grey: #eff0f2;
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --main: #f3d3c0;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: rgb(54, 57, 73);
+    --light-dark: rgba(54, 57, 73, 0.5);
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --primary-clr: #b38add;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Livvic', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198, 196, 196) var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+.invalid {
+    border: 1px solid var(--danger);
+}
+
+.bx {
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #181a1e;
+    --grey: #25252c;
+    --dark: #fbfbfb
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.reverse_rotate {
+    transform: rotate(-180deg);
+}
+
+.selected {
+    color: #ea6f11;
+}
+
+.blured {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 225, 225, 0.18);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+/* ================= MAIN_PART ================*/
+.banner {
+    background-color: var(--main-blue);
+    background-color: #29303b;
+    padding: 2% 5%;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+.banner h3 {
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 2.1em;
+    /* width: 70%; */
+    color: white;
+    margin-bottom: 1%;
+}
+
+.banner span {
+    font-weight: bold;
+    font-size: 1em;
+    color: #099f2f;
+}
+
+
+.freelancer_details {
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-family: "Livvic";
+    
+}
+
+.freelancer_details .left {
+    width: 70%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-right: 0;
+}
+
+
+
+.freelancer_details .left .infos {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.freelancer_details .left .infos .item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 8%;
+}
+
+.freelancer_details .left .infos .item i {
+    font-size: 2.5em;
+    color: #fe6c4c;
+}
+
+.freelancer_details .left .infos .item .left_side {
+    display: flex;
+    flex-direction: column;
+}
+
+.freelancer_details .left .infos .item .left_side span:nth-child(1) {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--main-blue);
+    
+}
+
+.freelancer_details .left .infos .item .left_side span:nth-child(2) {
+
+    font-weight: bold;
+    color: #fb9781;
+}
+
+
+.freelancer_details .left .text .part {
+    padding-bottom: 2%;
+    margin-bottom: 6%;
+    width: 80%;
+}
+
+.freelancer_details .left .text .part h3 {
+    font-size: 1.5em;
+    margin-bottom: 3%;
+}
+
+.freelancer_details .left .text .part.one p {
+    margin-bottom: 2.5%;
+}
+
+
+.timeline .date{
+    margin-bottom:2%;
+}
+.timeline .date i {
+    color: #099f2f;
+    font-size: .5em;
+    font-weight: bold;
+}
+ .timeline .date span{
+    color: #099f2f;
+    font-size: 1.1em;
+    font-weight: bold;
+  
+}
+
+.timeline .event {
+    margin-left: .5%;
+    margin-bottom: 3%;
+    padding-left: 2%;
+    font-size: .9em;
+    
+}
+.timeline .event:not(:last-child) {
+    border-left: 1px dashed #099f2f;
+    margin-left: .5%;
+    padding-left: 2%;
+    font-size: .9em;
+ 
+}
+
+.timeline .event h4{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.timeline .event span{
+    color: #099f2f;
+    /* color: var(--main-orange); */
+    font-size: 1em;
+    font-weight: bold;
+    
+}
+
+.timeline .event p{
+    margin-top: 2%;
+    font-size: 1.2em;
+    
+}
+
+
+
+.main_content .freelancer_details .right {
+    position:sticky;
+    top: 0;
+    width: 30%;
+    height: fit-content;
+    padding: 2% 1.5%;
+    margin-top: 2%;
+    margin-right: 2%;
+    border: 1px solid rgb(184, 184, 184);
+    box-shadow: 5px 5px 30px 2px #0000001e;
+    border-radius: 6px;
+}
+
+
+.freelancer_details .right h4 {
+    font-size: 1.8em;
+    margin-bottom: 5%;
+}
+
+.freelancer_details .right .head {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 3%;
+    margin-bottom: 4%;
+}
+
+.freelancer_details .right .head img {
+    height: 18%;
+    width: 18%;
+    
+}
+
+.freelancer_details .right .head .description .name{
+   font-size: 1.4em;
+   margin-bottom: 4%;
+}
+
+.freelancer_details .right .head .description .specialisation{
+    color: rgb(180, 178, 178);
+}
+ 
+.freelancer_details .right .part.three {
+   width: 100%;
+   padding-bottom: 6%;
+   margin-bottom:2%;
+   border-bottom: 1px solid var(--main-grey);
+}
+.freelancer_details .right .part.three .skills_item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1.5em;
+    justify-content: space-between;
+
+}
+
+.freelancer_details .right .part.three .skills_item p {
+    background-color: #fdd5cc;
+    border-radius: 15px;
+    padding: 1.2% 5.5%;
+}
+
+
+ 
+.freelancer_details .right .sender{
+    width: 100%;
+    padding-top:5%;
+    padding-bottom:5%;
+    background-color: var(--main-orange);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    transition: all .3s ease-in-out;
+
+}
+
+ 
+.freelancer_details .right .sender:hover{
+    cursor: pointer;
+    border: 1px solid var(--main-orange);
+    background-color: white;
+    color: var(--main-orange);
+}
+
+.freelancer_details .right .sender:hover a{
+    color: var(--main-orange);
+}
+
+

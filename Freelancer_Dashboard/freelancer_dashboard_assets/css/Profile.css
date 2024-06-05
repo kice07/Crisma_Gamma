@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --main-orange: #fe6c4c;
+    --second-orange: #faede8;
+    --third-orange: #ffe1d5;
+    --main-blue: #19202b;
+    --light-blue: #e4f4ff;
+    --main-grey: #969999;
+    --second-grey: #d3d8d8;
+    --third-grey: #eff0f2;
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --main: #f3d3c0;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: rgb(54, 57, 73);
+    --light-dark: rgba(54, 57, 73, 0.5);
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --primary-clr: #b38add;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Livvic', sans-serif;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198, 196, 196) var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+
+}
+
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.reverse_rotate {
+    transform: rotate(-180deg);
+}
+
+.blured {
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 225, 225, 0.18);
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* =============================DASHBOARD=============== */
+/* ----error----- */
+.error,.error2{
+    display: none;
+    background-color: var(--light-danger);
+    border: 1px solid var(--danger);
+    border-radius:7px ;
+    color: var(--danger);
+    font-size: 1.1em;
+    text-align: center;
+    padding: 1% 2%;
+    margin-bottom: 2%;
+}
+.main_content {
+    width: 100%;
+}
+
+.banner {
+    background-image: url("../images/backs/orange_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+
+}
+
+.main_info {
+
+    position: absolute;
+    width: 40%;
+    margin-top: -3%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.main_info .left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 2% 2%;
+    background-color: white;
+    /* border:.2px solid var(--main-grey); */
+
+}
+
+.main_info .left img {
+    height: 150px;
+    width: 140px;
+    border-radius: 50%;
+
+}
+
+.main_info .left i {
+    position: absolute;
+    font-size: 1.5em;
+    color: var(--main-orange);
+    bottom: 6%;
+    right: 6%;
+
+    background-color: white;
+    border-radius: 50%;
+    padding: 4% 4%;
+}
+
+.main_info .left i:hover{
+cursor: pointer;
+}
+.main_info .right h3 {
+    font-family: "Prompt";
+    font-weight: 600;
+    margin-bottom: 4%;
+    color: var(--main-blue);
+    font-weight: 1.7em;
+}
+
+.main_info .right span {
+    color: var(--main-grey);
+}
+
+
+
+.details_options {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+}
+
+.details_options .left {
+    width: 30%;
+    border-right: 1px solid var(--main-grey);
+    padding: 5% 2%;
+}
+
+.details_options .left p {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--main-grey);
+    margin-bottom: 15%;
+    transition: all .3s ease-in-out;
+
+}
+
+.details_options .left p:hover {
+    cursor: pointer;
+    color: var(--main-orange);
+}
+
+
+.details_options .right {
+    position: relative;
+    width: 70%;
+    padding: 1% 2%;
+}
+
+
+/* ======= case ========= */
+
+.details_options .case {
+    width: 100%;
+    padding: 1.5% 2%;
+}
+
+.details_options .case .top_line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+
+.details_options .case .top_line P {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--main-blue);
+}
+
+.details_options .case .top_line .modif-date {
+    width: 30%;
+    display: flex;
+    gap: 2%;
+}
+
+.details_options .case .top_line .modif-date span {
+    color: var(--main-grey);
+}
+
+.details_options .case .content .inputs_bloc {
+    display: grid;
+    grid-template-columns: repeat(2, .5fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 25px;
+    margin-bottom: 3%;
+}
+
+.case .content .inputs_bloc .input_field span {
+    color: var(--main-grey);
+}
+
+.case .content .inputs_bloc .input_field input {
+    width: 60%;
+    padding: 2% 2%;
+    color: var(--main-blue);
+    border: 1px solid var(--main-grey);
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Password input */
+.case .content .inputs_bloc .input_field .custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding: 1.5% 2.5%;
+    color: var(--main-blue);
+    border: 1px solid var(--main-grey);
+    border-radius: 5px;
+    outline: none;
+}
+
+.case .content .inputs_bloc .input_field .custom input {
+    width: 90%;
+    padding: 2% 2%;
+    color: var(--main-blue);
+    border: none;
+    outline: none;
+}
+
+.case .content .inputs_bloc .input_field .custom i {
+
+    color: var(--main-blue);
+}
+
+.case .content .inputs_bloc .input_field .custom i:hover {
+    cursor: pointer;
+}
+
+
+
+.content button {
+    padding: 1% 2%;
+    background-color: var(--main-orange);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.content button:hover {
+    background-color: rgb(249, 122, 94);
+    cursor: pointer;
+}
+
+/* subscription */
+.offer_bloc {
+    border: 1px solid var(--main-grey);
+    border-radius: 5px;
+    padding: 1% 2%;
+    width: 28%;
+    margin-bottom: 4%;
+}
+
+.offer_bloc .label {
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--main-blue);
+}
+
+.offer_bloc .price {
+    font-weight: bold;
+    color: var(--main-blue);
+    margin-top: 6%;
+    margin-bottom: 8%;
+    font-size: 1.3em;
+}
+
+
+.offer_bloc .options_list .op {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    margin-bottom: 10%;
+}
+
+
+.offer_bloc .options_list .op p {
+    color: var(--main-grey);
+}
+
+
+.offer_bloc .options_list .op i {
+    color: var(--main-orange);
+}
+
+.offer_bloc .annuler {
+    width: 100%;
+    padding: 4% 3%;
+
+}
+
+
+.popup_subscription {
+    display: none;
+    position: absolute;
+    top: 4%;
+    width: 95%;
+    border: 1px solid var(--main-grey);
+    border-radius: 5px;
+    padding: 1% 2%;
+    background-color: #fff;
+    z-index: 2;
+    margin-bottom: .5%;
+}
+
+.popup_subscription .ai-cross{
+   position: absolute;
+   top: 4%;
+   right: 2%;
+}
+.popup_subscription .ai-cross:hover{
+   cursor: pointer;
+}
+.popup_subscription .head_title {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Prompt';
+    font-size: 1.6em;
+    margin-bottom: 5%;
+}
+
+.popup_subscription .content {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.popup_subscription .content .offer_bloc:hover{
+   transition: all .3s ease-in-out;
+}
+ 
+
+.popup_subscription .content .offer_bloc:hover{
+   border-color: var(--main-orange);
+   cursor: pointer;
+}
+
+.popup_subscription .content .top {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.popup_subscription .content .top .ai-circle-check {
+    transition: all .3s ease-in-out;
+}
+
+.popup_subscription .content .top .ai-circle-check:hover {
+    cursor: pointer;
+    color: var(--main-orange);
+}
+
+.popup_subscription .content .top .ai-circle-check-fill {
+    display: none;
+    color: var(--main-orange);
+}
+
+.popup_subscription .content .top .ai-circle-check-fill:hover {
+    cursor: pointer;
+}
+
+.popup_subscription .choose_offer {
+    padding: 1% 2%;
+    background-color: var(--main-orange);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup_subscription .choose_offer:hover {
+    background-color: rgb(249, 122, 94);
+    cursor: pointer;
+}

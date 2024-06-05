@@ -1,0 +1,866 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --main-orange: rgb(254, 108, 76);
+    --second-orange: #faede8;
+    --main-blue: #19202b;
+    --light-blue:#005a9a;
+    --main-grey: #969999;
+    --second-grey: #d3d8d8;
+    --third-grey: #eff0f2;
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --main: #f3d3c0;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: rgb(54, 57, 73);
+    --light-dark: rgba(54, 57, 73, 0.5);
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --primary-clr: #b38add;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Livvic', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198, 196, 196) var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+.invalid {
+    border: 1px solid var(--danger);
+}
+
+.bx {
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.reverse_rotate {
+    transform: rotate(-180deg);
+}
+
+.selected {
+    color: #ea6f11;
+}
+
+.blured {
+    position: absolute;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 225, 225, 0.18);
+    height: 300vh;
+    width: 100%;
+    z-index: 11;
+}
+
+
+
+.show {
+    display: block;
+}
+
+/* ------------------- Previous------------------ */
+
+
+/* ============Error_login========== */
+.error_login {
+    z-index: 10000;
+    width: 40%;
+    position: absolute;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px dashed lightgray;
+    top: 50%;
+    left: 30%;
+
+    padding: 3% 2%;
+    background-color: white;
+    box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.03);
+}
+
+.error_login .top {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    color: #000;
+    width: 20%;
+    margin-bottom: 7%;
+    transition: all .3s ease-in-out;
+}
+
+.error_login .top i {
+    font-size: 2.1em;
+    transition: all .3s ease-in-out;
+}
+
+
+.error_login .top i:hover {
+    color: #ea6f11;
+    cursor: pointer;
+    transform: translateX(-5px);
+}
+
+.error_login .top i:hover~.error_login .top span {
+    color: #ea6f11;
+
+}
+
+.error_login .top span {
+    font-size: 1.5em;
+}
+
+.error_login p {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+
+
+/* =============================DASHBOARD=============== */
+.banner {
+    background-color: var(--main-blue);
+  
+    padding: 2% 3%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner h3 {
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 2.3em;
+    width: 70%;
+    color: white;
+    margin-bottom: 2%;
+}
+
+
+.main_content {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+
+    padding: 1% 0%;
+}
+
+
+/* ==================== CV ======================= */
+
+.left-side {
+    width: 60%;
+    padding-left: 2%;
+    padding-top: 2%;
+    margin-right: 1%;
+}
+
+.right-side {
+    position: sticky;
+    top: 1%;
+    
+    width: 39%;
+    height: fit-content;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--second-orange);
+    padding: 2%;
+}
+
+/*-------------- personal_detail------------ */
+.personal_detail {
+    margin-bottom: 3%;
+    margin-top: 1.5%;
+}
+
+.personal_detail span {
+    color: rgb(128, 128, 128);
+}
+
+h3{
+    font-family: 'Prompt';
+}
+.personal_detail h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 2%;
+   
+}
+
+.personal_detail .thumbnail img {
+    height: 95px;
+    width: 10%;
+    border-radius: 5px;
+}
+
+.personal_detail .field {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.personal_detail .thumbnail {
+    align-items: end;
+}
+
+.personal_detail .field .left {
+    margin-right: 2%;
+}
+
+.personal_detail .field .left,
+.personal_detail .field .right {
+    width: 50%;
+}
+
+
+
+
+.personal_detail .field input {
+    height: 50px;
+    width: 90%;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    /* background-color: #f9cea8; */
+    background-color: var(--second-orange);
+    padding-left: 5%;
+
+}
+
+.personal_detail .select_input ul {
+    border: .5px solid rgb(154, 154, 154);
+    border-radius: 6px;
+    padding-left: 3%;
+    padding-top: 2%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    height: 0;
+    opacity: 0;
+    transition: height .3s ease-in-out, opacity .3s ease-in-out;
+
+}
+
+.personal_detail .select_input .head {
+    margin-bottom: 4%;
+}
+
+.personal_detail .select_input .head input:hover {
+    cursor: pointer;
+}
+
+.personal_detail .select_input ul li {
+    color: rgb(128, 128, 128);
+    margin-bottom: 3%;
+    transition: all .3s ease-in-out;
+}
+
+.personal_detail .select_input ul li:hover {
+    transform: translateX(10px);
+    color: black;
+    cursor: pointer;
+}
+
+
+/* Largeur de la barre de défilement */
+.select_input ul::-webkit-scrollbar {
+    width: 5px;
+    /* ou la valeur de votre choix */
+    background-color: green;
+}
+
+/* Couleur de l'arrière-plan de la barre de défilement */
+.select_input ul::-webkit-scrollbar-track {
+    background-color: green;
+    /* ou la couleur de votre choix */
+}
+
+/* Couleur de la poignée de la barre de défilement */
+.select_input ul::-webkit-scrollbar-thumb {
+    background-color: blue;
+    /* ou la couleur de votre choix */
+    border-radius: 5px;
+    /* ou la valeur de votre choix */
+}
+
+/* Style de survol de la poignée de la barre de défilement */
+.select_input ul::-webkit-scrollbar-thumb:hover {
+    background-color: red;
+    /* ou la couleur de votre choix */
+}
+
+/* 
+
+
+
+/*-------------- professional_summary------------ */
+.professional_summary {
+    margin-bottom: 5%;
+
+}
+
+.professional_summary span {
+    color: rgb(128, 128, 128);
+}
+
+.professional_summary h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1%;
+}
+
+.professional_summary .description {
+    margin-bottom: 5%;
+}
+
+.professional_summary .textarea_field {
+    margin-top: 5%;
+    width: 95%;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+}
+
+textarea:focus {
+    outline: black;
+}
+
+.textarea_field .checker {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+.textarea_field .checker span {
+    font-size: .85em;
+}
+
+
+/*-------------- employement_history ------------ */
+
+.employment_history,
+.education_history,
+.skills,
+.languages
+{
+    margin-bottom: 15%;
+
+}
+
+.employment_history span,
+.education_history span,
+.skills span
+{
+    color: rgb(128, 128, 128);
+}
+
+.employment_history h3,
+.education_history h3,
+.skills h3 
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1%;
+}
+
+
+
+.input_field {
+    display: flex;
+    gap: 1em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+
+
+
+.input_field i {
+    font-size: 1.3em;
+    transition: all .3s ease-in-out;
+    margin-top: 4%;
+}
+
+.input_field i:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.input_field .input {
+    width: 90%;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 6px;
+    padding: 4% 5%;
+}
+
+.input_field .input .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2%;
+
+}
+
+.input_field .input .head .employment_title,
+.input_field .input .head .school_name_title
+{
+    font-weight: bold;
+}
+
+
+.input_field .input .bottom{
+
+    height: 536px;
+    opacity: 1;
+    transition: height .3s ease-in-out, opacity .3s ease-in-out;
+    overflow: hidden;
+}
+
+.input_field .input .bottom .field {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.input_field .input .bottom .field .date {
+    display: flex;
+}
+
+
+
+
+.input_field .input .bottom .field .left {
+    margin-right: 2%;
+}
+
+.input_field .input .bottom .field .left,
+.input_field .input .bottom .field .right {
+    width: 50%;
+}
+
+
+.input_field .input .bottom .field input 
+{
+    height: 50px;
+    width: 90%;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    /* background-color: #f9cea8; */
+    background-color: var(--second-orange);
+    padding-left: 5%;
+
+}
+
+
+
+.input_field .input .bottom .field .left .date input:hover{
+    cursor: pointer;
+}
+
+/* Calendar */
+.bottom .field .calendar {
+    display: none;
+    position: absolute;
+    margin-top: 1%;
+    border: 1px solid rgb(195, 195, 195);
+    padding: 1% 3%;
+    border-radius: 6px;
+    background-color: #fff;
+    height: 40%;
+    width: 20%;
+}
+
+.bottom .field .calendar .head {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.bottom .field .calendar .head p {
+    border-radius: 10px;
+    padding: 2% 2%;
+    color: white;
+    font-weight: bold;
+    background-color: #ea6f11;
+}
+
+.bottom .field .calendar .head i:hover {
+    color: #ea6f11;
+}
+
+
+.bottom .field .calendar .bottom {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 0.35fr);
+    grid-template-rows: repeat(4, 0.12fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}
+
+.bottom .field .calendar .bottom p {
+    transition: all .3s ease-in-out;
+    text-align: center;
+  
+}
+
+.bottom .field .calendar .bottom p:hover {
+    font-weight: bold;
+    color: #ea6f11;
+    cursor: pointer;
+}
+
+.bottom .tips {
+    font-size: .8em;
+}
+
+
+.employment_history .add,
+.education_history .add
+{
+    position: absolute;
+    z-index: 10;
+    color:#51c857;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.add:hover{
+  cursor: pointer;
+}
+
+
+/* ---------------- skills --------------- */
+
+.skills .input_field .bottom,
+.languages .input_field .bottom
+{
+    display: flex;
+    height:100px ;
+    opacity: 1;
+    transition: height .3s ease-in-out, opacity .3s ease-in-out;
+    
+}
+
+.skills .bottom .field,
+.languages .bottom .field
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+    
+.skills .bottom .field .levels,
+.languages .bottom .field .levels
+{
+    /* display: flex; */
+    height: 50px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+
+    border: 1px solid lightgray;
+    border-radius: 6px;
+
+    
+}
+
+.skills .bottom .field .levels .bloc,
+.languages .bottom .field .levels .bloc
+{
+    border-right: 1px solid lightgray;
+    transition: all .3s ease-in-out;
+
+}
+
+.skills .bottom .field .levels .bloc:hover,
+.languages .bottom .field .levels .bloc:hover{
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+
+.skills .secondAdd,
+.languages .secondAdd
+{
+    position: absolute;
+    z-index: 10;
+    color:#51c857;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.secondAdd:hover{
+  cursor: pointer;
+}
+
+/* ================sendbuton */
+.sendButton{
+    width: 90%;
+    margin-bottom: 3%;
+    background-color: #51c857;
+    color: white;
+    padding: 3% 2%;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+    border: none;
+    border-radius:6px
+}
+.sendButton:hover{
+    width: 90%;
+    cursor: pointer;
+    background-color: #419f46;
+
+}
+
+.error{
+    display: none;
+    width: 95%;
+    padding: 2% 4%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    background-color: rgb(248, 173, 173);
+    border:1px dashed red;
+    border-radius: 6px;
+}
+
+.success {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    padding: 4% 5%;
+    background-color: rgb(146, 251, 146);
+    border: 1px dashed rgb(31, 131, 31);
+    border-radius: 6px;
+    z-index: 2000;
+}
+
+
+.success p{
+    color: rgb(31, 131, 31);
+    font-size: 1.1em;
+}
+
+.success p:nth-child(1){
+    margin-bottom: 10%;
+}
+.success .back {
+    width: 90%;
+    margin-left: 5%;
+    padding: 5% 2%;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    font-size: 1em;
+}
+
+.success .back a{
+    text-decoration: none;
+    color: rgb(31, 131, 31);
+    
+    font-weight: bold;
+}
+
+
+
+.success .back:hover{
+   cursor:pointer;
+   transform:scale(1.01);
+}
+
+.success .back:focus{
+    transform:scale(.95);
+}
+
+
+
+
+
+/* ===================== RIGHT_PREVIEW ================ */
+
+
+
+.right-side .cv_file{
+    position: relative;
+    background-color: white;
+    width: 100%;
+    /* height: fit-content; */
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+
+.cv_file .watermark{
+    position: absolute;
+    top: 45%;
+    left: 23%;
+    height: 40%;
+    width: 55%;
+    opacity: .1;
+
+}
+
+
+.cv_file .top{
+    display: flex;
+    gap: 1em;
+    margin-left: 15%;
+}
+
+.cv_file .top img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-bottom: 15%;
+}
+.cv_file .top .infos h3{
+    font-family: 'Prompt';
+    color: var(--main-blue);
+    margin-bottom: 1%;
+}
+.cv_file .top .infos .position{
+    color: var(--light-blue);
+    font-weight: bold;
+    margin-bottom: 1%;
+
+}
+.cv_file .top .infos p{
+    color: var(--main-grey);
+    margin-bottom: 1%;
+}
+
+/* ------bio */
+.cv_file .section{
+    display: flex;
+    gap: .5em;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+.cv_file .preview_about p:nth-child(2),
+.cv_file .section .exp_bloc,
+.cv_file .section .sch_bloc,
+.cv_file .section .skill_bloc,
+.cv_file .section .lang_bloc
+{
+    padding-bottom: 2%;
+    border-bottom : 1px solid var(--second-grey);
+    font-size: .8em;
+    width: 80%;
+    
+}
+
+.cv_file .section .lang_bloc{
+    border: 0;
+}
+
+.cv_file .section .exp_bloc .exp,
+.cv_file .section .sch_bloc .sch
+{
+    margin-bottom: 2%;
+}
+
+.cv_file .section .exp_bloc .exp .description{
+    padding-top: 1%;
+    padding-left: 3%;
+    margin-bottom: 1%;
+}
+
+
+.cv_file .section .exp_bloc .exp .head,
+.cv_file .section .sch_bloc .sch
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.cv_file .section .exp_bloc .exp .head span,
+
+.cv_file .section .sch_bloc .sch span
+{
+   color: var(--light-blue);
+   font-weight: bold;
+   font-size: .9em;
+}
+
+.cv_file .section .exp_bloc .exp .head .titles,
+.cv_file .section .sch_bloc .sch .titles{
+    width: 60%;
+}
+
+
+.cv_file .section .skill_bloc,
+.cv_file .section .lang_bloc{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+.cv_file .title{
+    color: var(--light-blue);
+    font-weight: bold;
+    font-size: .7em;
+    width: 20%;
+    opacity: 0;
+    
+}

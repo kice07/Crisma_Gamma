@@ -1,0 +1,54 @@
+
+
+@media (max-width:992px) {
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+    .mobile-header {
+        display: block;
+    }
+
+    .calendar-wrapper {
+        margin-top: 80px;
+    }
+
+    .sidebar-wrapper {
+        background-color: #EEEEEE !important;
+    }
+
+    .sidebar-title {
+        background-color: #5A649C !important;
+    }
+
+    .empty-message {
+        color: black;
+    }
+}
+
+@media (max-width:767px) {
+    .content-wrapper .container {
+        width: auto;
+    }
+
+    .calendar-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    body .row {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:450px) {
+    .content-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content-wrapper .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets2/css/job_browser.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>CrismaWork | Job browsing</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            <img src="assets2/images/other/CrisLogoBlack.png" alt="">
+        </div>
+
+        <div class="mid">
+            <a href="#" class="text translate">Tutoriel</a>
+            <a href="#" class="text translate">Offres disponibles</a>
+            <a href="#" class="text translate">A propos</a>
+            
+        </div>
+
+        <div class="end">
+            <a href="login_registration.html" class="text translate">Devenir Entreprise</a>
+            <a href="#" class="text translate">Devenir Freelancer</a>
+            <div class="lang">
+
+                <img src="https://flagcdn.com/fr.svg" width="30" alt="France">
+                <!-- usa--<img src="https://flagcdn.com/um.svg" width="30" alt="Îles mineures éloignées des États-Unis"> -->
+                <a href="" class="text">Fr</a>
+                <i class='bx bx-chevron-down'></i>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="categories">
+      
+    </div>
+
+    <!-- =================== JOB  ==================== -->
+
+    <!-- Head -->
+    <div class="job_search_head">
+        <h3 class="title translate">Nos offres</h3>
+        <p class="description translate">Decouvrez nos offres par categories</p>
+        <div class="search_bar">
+            <i class='bx bx-search'></i>
+            <input type="text" name="job_title" id="job_title" placeholder="Que cherchez vous ?">
+            <button class="translate">Chercher</button>
+        </div>
+        <img src="assets2/images/illustration/job_pic.png" alt="">
+    </div>
+
+
+    <!-- Body -->
+    <div class="job_search_body">
+        <div class="filter">
+
+            <!-- Category -->
+            <div class="category">
+                <p class="title translate">Sous categories</p>
+                <div class="category_items">
+                    <p>Aucune categorie selectionée</p>
+                </div>
+
+            </div>
+
+            <!-- Type -->
+            <div class="job_type">
+                <p class="title">Type</p>
+                <div class="type_items">
+                    <div class="type_item">
+                        <div class="first_part">
+                            <label class="switch">
+                                <input type="checkbox" name="Jtype" value="Fulltime">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="translate name">Temps plein</span>
+                        </div>
+
+                        <p class="number translate">(2 640)</p>
+                    </div>
+
+                    <div class="type_item">
+                        <div class="first_part">
+                            <label class="switch">
+                                <input type="checkbox" name="Jtype" value="parttime">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="translate name">Temps partiel</span>
+                        </div>
+
+                        <p class="number translate">(2 640)</p>
+                    </div>
+
+                    <div class="type_item">
+                        <div class="first_part">
+                            <label class="switch">
+                                <input type="checkbox" name="Jtype" value="Contract">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="translate name">Contrats</span>
+                        </div>
+
+                        <p class="number translate">(2 640)</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- salary -->
+            <div class="salary">
+                <h3 class="title translate">Salaire</h3>
+                <div class="wrapper">
+
+
+                    <div class="price-input">
+                        <div class="field">
+                            <span>Min</span>
+                            <input type="number" class="input-min" value="2500">
+                        </div>
+                        <!-- <div class="separator">-</div> -->
+                        <div class="field">
+                            <span>Max</span>
+                            <input type="number" class="input-max" value="7500">
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                        <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+                        <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- skills -->
+            <div class="skills">
+                <p class="title translate">Compétences</p>
+
+                <input type="text" name="skill" id="skills">
+                <div class="search_results">
+                    <div class="item">
+                        <p>HTML5</p>
+                    </div>
+
+                    <div class="item">
+                        <p>PHP</p>
+                    </div>
+
+                    <div class="item">
+                        <p>CSS</p>
+                    </div>
+                    <div class="item">
+                        <p>JS</p>
+                    </div>
+                    <div class="item">
+                        <p>Node</p>
+                    </div>
+                </div>
+
+                <div class="selected_skills">
+                    <div class="item">
+                        <i class='bx bx-x'></i>
+                        <p>HTML5</p>
+                    </div>
+
+                    <div class="item">
+                        <i class='bx bx-x'></i>
+                        <p>PHP</p>
+                    </div>
+
+                    <div class="item">
+                        <i class='bx bx-x'></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="item">
+                        <i class='bx bx-x'></i>
+                        <p>JS</p>
+                    </div>
+                    <div class="item">
+                        <i class='bx bx-x'></i>
+                        <p>Node</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="apply_filter">Appliquer </button>
+        </div>
+
+
+        <div class="job_bloc">
+            <p class="title"> 123 Offres disponibles</p>
+            <div class="jobs_wrapper">
+                <div class="job">
+                    <div class="head">
+                        <a href="job_details.php" class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="job">
+                    <div class="head">
+                        <a class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="job">
+                    <div class="head">
+                        <a class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="job">
+                    <div class="head">
+                        <a class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="job">
+                    <div class="head">
+                        <a class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="job">
+                    <div class="head">
+                        <a class="job-title">Website building</a>
+                        <span class="open-positions">
+                            Depuis 2jrs
+                        </span>
+                    </div>
+                    <div class="mid-info">
+                        <span class="expire-date">Expire le 12/07/25</span> <br><br>
+                        <i class='bx bxs-group'></i><span class="candidate">3 postulants</span><br>
+                        <div class="skills">
+
+                            <span>Html</span>
+                            <span>css</span>
+                            <span>Php</span>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <div class="first-col">
+                            <div class="ab">
+                                <i class='bx bxs-briefcase-alt-2'></i><span>2ans</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bx-money'></i><span> 1500$</span>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="ab">
+                                <i class='bx bxs-time-five'></i><span>Temps partiel</span>
+                            </div>
+                            <div class="ba">
+                                <i class='bx bxs-user'></i><span>Dev Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="row">
+            <div class="upper">
+                <div class="left">
+                    <img src="assets2/images/other/CrisLogoWhite.png" alt="" class="logo">
+                    <div class="socials">
+                        <i class='bx bxl-instagram' ></i>
+                        <i class='bx bxl-facebook-circle' ></i>
+                        <i class='bx bxl-linkedin-square' ></i>
+                    </div>
+                    <p class="catchphrase">Avec CrismaWork pouvez vivre pleinement vos rêves</p>
+                </div>
+                <div class="right">
+                    <p>Grand Bassam , Côte d'Ivoire</p>
+                    <p class="email translate">Contact : CrismaWork@gmail.com</p>
+                
+                </div>
+            </div>
+            <div class="down">
+                <a href="#" class="translate">Tutoriel</a>
+                <a href="#" class="translate">offres</a>
+                <a href="#" class="translate">Devenir une entreprise</a>
+                <a href="#" class="translate">Connexion</a>
+                <a href="#" class="translate">Inscription</a>
+                
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <p class="title translate">A l'affût</p>
+            <p class="translate">Souscrivez à notre newsletter pour être aux aguêts de nouvelles offres</p>
+            <div class="newsletter_bar">
+                <input type="text" id="subscription" placeholder="Email">
+                <button class="translate">Souscrire</button>
+            </div>
+            <p class="copyright translate">© 2023 CrismaWork. Tous droits reservés</p>
+        
+        </div>
+    </div>
+   
+
+    <script src="assets2/js/job_browsing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="crislogo.png" type="image/png">
+    <link rel="stylesheet" href="main_assets/css/style.css">
+    <title>Crismawork</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="main_assets/images/illustration/offers.png" class="offer" alt="">
+        <img src="main_assets/images/illustration/tasks.png" class="task" alt="">
+        <div class="left">
+            <!-- nav -->
+            <div class="nav">
+                <div class="logo">
+                    <!-- <img src="admin_dashboard_assets/images/crislogo.png" alt=""> -->
+                    <img src="main_assets/images/crislogo2.png" alt="">
+                </div>
+                <div class="other">
+                    <ul>
+                        <a href="freelancer.php">
+                            <li class="translate">Tutoriel</li>
+                        </a>
+                        <a href="offer_list.php">
+                            <li class="translate">Offres disponibles</li>
+                        </a>
+                        <a href="applicants.php">
+                            <li class="translate">Derriere Crismawork</li>
+                        </a>
+                      
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="header_text">
+                <h3>Là où opportunités et talents africains se rencontrent</h3>
+                <span>
+                    Avec Crismawork vous auez l'opportunités en tant qu'expert dans un domaines
+                    de rencontrez des entreprises à la recherche de personne capable dqns ce domaine.
+                </span>
+                <div class="actions">
+                    <a href="">Postulez pour une offre</a>
+                    <a href="">Derrière Crismawork</a>
+                </div>
+            </div>
+
+            <div class="record">
+                <div class="rec">
+                    <p>+12M</p>
+                    <span>entreprises</span>
+                </div>
+
+                <div class="rec">
+                    <p>+4M</p>
+                    <span>Freelancer</span>
+                </div>
+
+                <div class="rec">
+                    <p>+50M</p>
+                    <span>Contrats signés</span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="right">
+            <div class="second_nav">
+                <img src="https://www.worldometers.info/img/flags/fr-flag.gif" alt="" onclick="changeFlag(this)">
+                <!-- <a href="">Connexion</a> -->
+                <a href="path_choice.html">Connexion</a>
+                <!-- <div class="options">
+                    <a href="">Connexion</a>
+                    <a href="">Inscription</a>
+                </div> -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PARTNER -->
+    <div class="partner">
+        <i class='bx bxl-meta' ></i>
+        <i class="ai-instagram-fill"></i>
+        <i class="ai-linkedin-fill"></i>
+       <i class="ai-x-fill"></i>
+       <i class='bx bxl-spotify' ></i>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services">
+        <h3 class="title">NOS SERVICES</h3>
+        <div class="infos">
+            <div class="slider">
+                <img src="main_assets/images/illustration/search.png">
+                <!-- <div class="wrapper">
+                    <img src="search.png">
+                    <img src="call.png">
+                    <img src="contrat.png">
+                    <img src="earn.png">
+                </div> -->
+            </div>
+            <div class="infos-bloc">
+
+                <!-- first -->
+                <div class="bloc white">
+                    <div class="icons"><i class='bx bx-search-alt-2'></i></div>
+                    <p>Cherchez des offres d'emploi
+                        dans votre (vos) domaine(s) de compétences et postulez</p>
+                </div>
+
+                <!-- second -->
+                <div class="bloc other">
+                    <div class="icons"><i class='bx bxs-video'></i></div>
+                    <p>Passez des entretiens d'embauches virtuels ,
+                        prouvez votre valeur</p>
+                </div>
+
+
+                <!-- first -->
+                <div class="bloc other">
+                    <div class="icons"><i class='bx bxs-briefcase'></i></div>
+                    <p>signez un contrat avec des entreprises
+                        signez un contrat avec des entreprises
+                        signez un contrat avec des entreprises
+                        signez un contrat avec des entreprises
+                    </p>
+                </div>
+
+                <!-- second -->
+                <div class="bloc white">
+                    <div class="icons"><i class='bx bx-money'></i></div>
+                    <p>Percevez vos remunérations
+                        Percevez vos remunérations
+                        Percevez vos remunérations
+                        Percevez vos remunérations
+                        Percevez vos remunérations
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="categories">
+        <div class="head">
+            <h3 class="title">NOS CATEGORIES</h3>
+            <p>voir +</p>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <p>Retrouvez les categories principles
+                    des offres sur <span>Crismawork</span>
+                </p>
+            </div>
+            <div class="right">
+                <div class="card one" onmouseenter="showDetails(this)" onmouseleave="hideDetails(this)">
+                    <img class="back" src="main_assets/images/illustration/Graphic design.png"></img>
+                    <i class="ai-arrow-up-right"></i>
+                    <p>Design</p>
+                </div>
+                <div class="card two" onmouseenter="showDetails(this)" onmouseleave="hideDetails(this)">
+                    <img class="back" src="main_assets/images/illustration/digital marketing.png"></img>
+                    <i class="ai-arrow-up-right"></i>
+                    <p>Marketing Digital</p>
+                </div>
+                <div class="card three" onmouseenter="showDetails(this)" onmouseleave="hideDetails(this)">
+                    <img class="back" src="main_assets/images/illustration/programtion and tech.png"></img>
+                    <i class="ai-arrow-up-right"></i>
+                    <p>Programation et technologie</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="feedback">
+        <h3 class="title">CE QU'ILS DISENT DE NOUS</h3>
+        <p>Une revue de ce que nos utilisateurs disent de nous </p>
+
+        <div class="content">
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3"
+                space-between="30" free-mode="true">
+                <swiper-slide>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="description">I had an amazing experience with this company!
+                        The customer service was top-notch,
+                        and the product exceeded my expectations.
+                        I highly recommend them to anyone looking for
+                        quality products and excellent service.
+                    </p>
+                    <div class="profile">
+                        <img src="main_assets/images/illustration/thumbnail.png" alt="">
+                        <div class="infos">
+                            <p>Ehouman Ivan</p>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="description">I had an amazing experience with this company!
+                        The customer service was top-notch,
+                        and the product exceeded my expectations.
+                        I highly recommend them to anyone looking for
+                        quality products and excellent service.
+                    </p>
+                    <div class="profile">
+                        <img src="main_assets/images/illustration/thumbnail.png" alt="">
+                        <div class="infos">
+                            <p>Ehouman Ivan</p>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="description">I had an amazing experience with this company!
+                        The customer service was top-notch,
+                        and the product exceeded my expectations.
+                        I highly recommend them to anyone looking for
+                        quality products and excellent service.
+                    </p>
+                    <div class="profile">
+                        <img src="thumbnail.png" alt="">
+                        <div class="infos">
+                            <p>Ehouman Ivan</p>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="description">I had an amazing experience with this company!
+                        The customer service was top-notch,
+                        and the product exceeded my expectations.
+                        I highly recommend them to anyone looking for
+                        quality products and excellent service.
+                    </p>
+                    <div class="profile">
+                        <img src="main_assets/images/illustration/thumbnail.png" alt="">
+                        <div class="infos">
+                            <p>Ehouman Ivan</p>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+            </swiper-container>
+
+        </div>
+
+    </div>
+
+    <!-- ABOUT_US -->
+    <div class="about_us">
+        <h3 class="title">DERRIERE LES SCENES DE CRISMAWORK</h3>
+        <p>Des figures emblématique à l'origine de Crismawork</p>
+
+        <div class="profiles_bloc">
+            <div class="profile one">
+                <div class="imgBx"></div>
+                <div class="content">
+                    <span class="more"><i class="ai-arrow-up-right"></i></span>
+                    <p class="name">EHOUMAN Korangui Christ Ivan</p>
+                    <p class="position">Founder</p>
+                    <div class="socials">
+                        <i class="ai-instagram-fill"></i>
+                        <i class="ai-linkedin-fill"></i>
+                        <i class="ai-x-fill"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile two">
+                <div class="imgBx"></div>
+                <div class="content">
+                    <span class="more"><i class="ai-arrow-up-right"></i></span>
+                    <p class="name">EHOUMAN Korangui Christ Ivan</p>
+                    <p class="position">Founder</p>
+                    <div class="socials">
+                        <i class="ai-instagram-fill"></i>
+                        <i class="ai-linkedin-fill"></i>
+                        <i class="ai-x-fill"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile three">
+                <div class="imgBx"></div>
+                <div class="content">
+                    <span class="more"><i class="ai-arrow-up-right"></i></span>
+                    <p class="name">EHOUMAN Korangui Christ Ivan</p>
+                    <p class="position">Founder</p>
+                    <div class="socials">
+                        <i class="ai-instagram-fill"></i>
+                        <i class="ai-linkedin-fill"></i>
+                        <i class="ai-x-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div class="FAQ">
+        <h3 class="title">TOUT CE QUE VOUS DEVEZ SAVOIR A PROPOS DE CRISMAWORK</h3>
+        <p>Les questions frequement posées</p>
+
+        <div class="container">
+            <div class="wrapper">
+                <button class="toggle">
+                    What is the return policy?
+                    <i class="ai-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam facere adipisci quod
+                        mollitia, aut nemo deleniti fugiat et, corrupti sequi. Omnis dolorem quos eligendi placeat
+                        soluta sint corrupti quod.</p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <button class="toggle">
+                    How do I apply the coupon?
+                    <i class="ai-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores error doloremque, quibusdam qui
+                        necessitatibus autem aperiam reprehenderit? Ipsum maiores dolore inventore ea. Accusantium fuga
+                        eius laboriosam iusto blanditiis doloremque ullam?</p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <button class="toggle">
+                    How do I become a member?
+                    <i class="ai-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur officiis labore
+                        commodi sunt ex praesentium dolor magnam asperiores reiciendis. Minus magnam nesciunt aliquid
+                        eos ipsam sequi recusandae quos incidunt.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- APP & SUSCRIBE -->
+    <div class="App">
+        <div class="container">
+            <div class="left">
+                <p>Rejoignez Crismawork sur android ou iphone et devenez libre</p>
+                <div class="buttons">
+                    <button>
+                        <i class='bx bxl-play-store'></i>
+                        <span>Disponible sur Playstore</span>
+                    </button>
+                    <button>
+                        <i class='bx bxl-apple'></i>
+                        <span>Disponible sur AppStore</span>
+                    </button>
+                </div>
+
+            </div>
+            <img src="main_assets/images/illustration/mockups.png" alt="">
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="content">
+            <div class="col">
+                <div class="head">
+                    <img src="main_assets/images/crislogo2.png" alt="">
+                    <span>CriswmaWork</span>
+                </div>
+
+                <p>Lorem ipsum dolor sit,
+                    amet consectetur adipisicing elit.
+                    Officia aperiam, accusamus excepturi omnis
+                    obcaecati modi autem praesentium molestias
+                    nostrum fuga consequuntur illum harum corporis,
+                    nesciunt laborum mollitia nulla optio amet.
+                </p>
+                <div class="socials">
+                    <a href=""><i class='bx bxl-facebook'></i></a>
+                    <a href=""><i class="ai-instagram-fill"></i></a>
+                    <a href=""><i class="ai-linkedin-fill"></i></a>
+                    <a href=""><i class="ai-x-fill"></i></a>
+                </div>
+            </div>
+            <div class="col">
+                <p class="title">Support</p>
+                <ul>
+                    <li><a href="">Tutoriel</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Politique de confidentialié</a></li>
+                    <li><a href="">Aide</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <p class="title">Categorie</p>
+                <ul>
+                    <a href=""><li>Graphics & Design</li></a>
+                    <a href=""><li>Digital Marketing</li></a>
+                    <a href=""><li>Digital Marketing</li></a>
+                    <a href=""><li>Writing & Translation</li></a>
+                    <a href=""><li>Programming & Tech</li></a>
+                    <a href=""><li>Business</li></a>
+                </ul>
+            </div>
+
+            <div class="col">
+                <p class="title">Contact</p>
+                <p>
+                    <i class='bx bxs-phone'></i>
+                    <span>+1 (506) 278 563</span>
+                </p>
+                <p >
+                    <i class='bx bxs-envelope'></i>
+                    <span>ivanehouamn5@gmail.com</span>
+                </p>
+
+                <p>souscrivez et a notre newletter et restez à
+                    l'affût des dernières offres d'emplois
+                </p>
+                <div class="input_field">
+                    <input type="text">
+                    <button>souscrire</button>
+                </div>
+            </div>
+        </div>
+        <div class="credits">
+            <p>copyright 2024 crismawork. All right reserved</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="main_assets/main.js"></script>
+</body>
+
+</html>
