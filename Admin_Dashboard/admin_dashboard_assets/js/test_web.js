@@ -3,7 +3,7 @@ let currentUserId;
 let currentContactId;
 
 document.getElementById('connect').onclick = function() {
-    conn = new WebSocket('wss://46.28.41.127:8080');
+    conn = new WebSocket('ws://46.28.41.127:8080');
 
     conn.onopen = function(e) {
         console.log("Connection established!");
