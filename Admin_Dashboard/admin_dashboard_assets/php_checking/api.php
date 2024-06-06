@@ -1,9 +1,9 @@
 <?php
 header("Content-Type: application/json");
 
-$dsn = "mysql:host=localhost;dbname=websocket;charset=utf8mb4";
-$username = "root";
-$password = "";
+$dsn = "mysql:host=srv1266.hstgr.io;dbname=u645835425_crismawork;charset=utf8mb4";
+$username = "u645835425_kice";
+$password = "GODis2king#";
 
 try {
     $pdo = new PDO($dsn, $username, $password);
