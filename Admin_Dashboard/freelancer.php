@@ -64,7 +64,7 @@ $starter = 1;
             <?php
             while ($row = mysqli_fetch_assoc($cat_query)) {
             ?>
-                <li class="translate" id="<?php echo $row['id'] ?>" onclick="getSubCat(this)"><?php echo $row['label'] ?></li>
+                <li class="translate" id="<?php echo $row['id'] ?>" onclick="getSubCat(this)" style="font-size: .9em;"><?php echo $row['label'] ?></li>
             <?php
             }
             ?>
