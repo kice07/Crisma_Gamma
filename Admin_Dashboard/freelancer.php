@@ -44,7 +44,9 @@ $starter = 1;
             <div class="search_bar">
 
                 <i class="ai-search"></i>
-                <input type="text" name="job-title" class="job-title" placeholder="Nom du freelancer" onkeyup="searchName(this)">
+                <input type="text" name="job-title" class="job-title"
+                placeholder="Nom du freelancer" onkeyup="searchName(this)"
+                style="background-color: #29303b;">
                 <!-- <span class="translate"></span> -->
 
 
