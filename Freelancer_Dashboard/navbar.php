@@ -24,7 +24,7 @@
 
         <div class="counter">
             <i class='bx bx-bell'></i>
-            <span style="top:2%;">2</span>
+            <span style="top:2%;right:1%">2</span>
         </div>
 
         <div class="counter">
