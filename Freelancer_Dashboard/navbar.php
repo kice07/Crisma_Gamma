@@ -20,20 +20,18 @@
         </ul>
     </div>
     <div class="end">
-        <img src=<?php echo (strtolower(substr($_SESSION['language'],0,2)) == "fr") ? "https://www.worldometers.info/img/flags/fr-flag.gif" : "https://www.worldometers.info/img/flags/us-flag.gif" ?> alt="" onclick="changeFlag(this)">
+        <img src=<?php echo (strtolower(substr($_SESSION['language'], 0, 2)) == "fr") ? "https://www.worldometers.info/img/flags/fr-flag.gif" : "https://www.worldometers.info/img/flags/us-flag.gif" ?> alt="" onclick="changeFlag(this)">
 
         <div class="counter">
-            <i class='bx bx-chat'></i>
+            <i class='bx bx-bell'></i>
             <span>2</span>
         </div>
 
         <div class="counter">
-            <i class='bx bx-bell'></i>
-
+            <i class="ai-calendar"></i>
         </div>
 
-        <a href="profile.php" class="profile"><img src=<?php echo ($_SESSION['image']  =='' ) ? "freelancer_dashboard_assets/images/freelancer/no_user.png":"freelancer_dashboard_assets/images/freelancer/".$_SESSION['image'] ?>
-        style="border:2px solid white" alt=""></a>
+        <a href="profile.php" class="profile"><img src=<?php echo ($_SESSION['image']  == '') ? "freelancer_dashboard_assets/images/freelancer/no_user.png" : "freelancer_dashboard_assets/images/freelancer/" . $_SESSION['image'] ?> style="border:2px solid white" alt=""></a>
     </div>
 </div>
 
@@ -54,10 +52,10 @@
 
     function changeFlag(flag) {
         if ((flag.src).substring((flag.src).length - 11) == 'fr-flag.gif') {
-           
-           
+
+
             let xhr = new XMLHttpRequest();
-            
+
             xhr.open("POST", "freelancer_dashboard_assets/php_checking/change_flag.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onload = () => {
@@ -76,7 +74,7 @@
             xhr.send('new_lang=en');
         } else {
             let xhr = new XMLHttpRequest();
-            
+
             xhr.open("POST", "freelancer_dashboard_assets/php_checking/change_flag.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onload = () => {
@@ -93,7 +91,7 @@
                 }
             }
             xhr.send('new_lang=fr');
-           
+
         }
     }
 </script>
