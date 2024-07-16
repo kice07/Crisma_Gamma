@@ -22,7 +22,7 @@
     <div class="end">
         <img src=<?php echo (strtolower(substr($_SESSION['language'], 0, 2)) == "fr") ? "https://www.worldometers.info/img/flags/fr-flag.gif" : "https://www.worldometers.info/img/flags/us-flag.gif" ?> alt="" onclick="changeFlag(this)">
 
-        <div class="counter">
+        <div class="counter" style="position: relative;">
             <i class='bx bx-bell'></i>
             <span style="top:2%;right:1%">2</span>
         </div>
