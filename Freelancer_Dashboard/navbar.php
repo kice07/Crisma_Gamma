@@ -28,7 +28,7 @@
         </div>
 
         <div class="counter">
-            <i class="ai-calendar"></i>
+            <i class='bx bx-calendar'></i>
         </div>
 
         <a href="profile.php" class="profile"><img src=<?php echo ($_SESSION['image']  == '') ? "freelancer_dashboard_assets/images/freelancer/no_user.png" : "freelancer_dashboard_assets/images/freelancer/" . $_SESSION['image'] ?> style="border:2px solid white" alt=""></a>
