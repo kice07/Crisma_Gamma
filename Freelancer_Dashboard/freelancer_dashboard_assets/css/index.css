@@ -475,7 +475,7 @@ body {
     color: #7b0e13;
 }
 
-.left .bloc .nothing{
+.nothing{
     display: flex;
     flex-direction: column;
     gap: 3%;
@@ -484,7 +484,7 @@ body {
     background-color: red;
 }
 
-.left .bloc .nothing img{
+.nothing img{
   height: 200px;
   width: 200px;
 }
