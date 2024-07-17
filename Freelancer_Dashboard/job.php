@@ -27,6 +27,22 @@ function parseDate($dateString)
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/Job.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
 
+    <style>
+        .main_content .left::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .main_content .left::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .main_content .left::-webkit-scrollbar-thumb {
+            background: var(--main-grey);
+           
+            cursor: pointer;
+        }
+    </style>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
@@ -79,10 +95,10 @@ function parseDate($dateString)
 
 
         <!-- main -->
-        <div class="main_content">
+        <div class="main_content" style="height: 920px;">
 
             <!-- ======LEFT======= -->
-            <div class="left">
+            <div class="left" style="overflow-y:scroll;">
                 <div class="head">
                     <h3 class="translate">Filtre</h3>
                     <span class="translate">Effacer</span>
@@ -155,8 +171,8 @@ function parseDate($dateString)
 
 
 
-                <button class="translate apply" style="margin-top:3%"onclick="ApplyFilter(this)">Appliquer</button>
-               
+                <button class="translate apply" style="margin-top:3%" onclick="ApplyFilter(this)">Appliquer</button>
+
 
             </div>
 
@@ -292,12 +308,12 @@ function parseDate($dateString)
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
         var matchElement = document.querySelector(".found");
-       
+
         function searchName(element) {
             var match = false;
             var found = 0;
             var searchText = element.value;
-            const regex = new RegExp(searchText,'i');
+            const regex = new RegExp(searchText, 'i');
 
             var free = document.querySelector(".job_bloc");
             var freebloc = document.querySelectorAll(".job_bloc .job");
@@ -309,7 +325,7 @@ function parseDate($dateString)
             })
 
             if (searchText == "") {
-                matchElement.innerHTML='<strong class="translate">Résultats trouvés</strong> ('+<?php echo mysqli_num_rows($jobs_query) ?>+')'
+                matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + <?php echo mysqli_num_rows($jobs_query) ?> + ')'
                 free.style.opacity = "1";
                 freebloc.forEach(free => {
                     // free.style.opacity = "1";
@@ -333,8 +349,8 @@ function parseDate($dateString)
                     // free.style.opacity = "0";
                     free.style.display = "none";
                     document.querySelector(".none").style.display = "block";
-                }else{
-                    matchElement.innerHTML='<strong class="translate">Résultats trouvés</strong> ('+found+')'
+                } else {
+                    matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + found + ')'
                 }
             }
 
