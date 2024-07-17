@@ -66,7 +66,7 @@ function parseDate($dateString)
 
 
         <!-- Categories -->
-        <ul class="categories">
+        <ul class="categories" style="justify-content: space-evenly; gap:1em">
             <?php
             while ($row = mysqli_fetch_assoc($cat_query)) {
             ?>
