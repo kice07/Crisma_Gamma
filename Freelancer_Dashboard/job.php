@@ -38,7 +38,7 @@ function parseDate($dateString)
 
         .main_content .left::-webkit-scrollbar-thumb {
             background: var(--main-grey);
-           
+
             cursor: pointer;
         }
     </style>
@@ -405,8 +405,24 @@ function parseDate($dateString)
             }
         }
 
+        function fethData() {
+            let xhr = new XMLHttpRequest();
 
+            let subcatForm = new FormData();
+            subcatForm.append("action", "retrieve");
+            xhr.open("POST", "freelancer_dashboard_assets/php_checking/get-job-api.php", true);
+            xhr.onload = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        let data = xhr.response;
+                        dataList = JSON.parse(data);
+                        console.log(data);
+                    }
+                }
+            }
 
+            xhr.send(subcatForm);
+        }
         var starter = "<?php $starter ?>";
         displayRow(starter, document.querySelector(".job_bloc"));
     </script>
