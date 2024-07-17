@@ -301,20 +301,22 @@ function parseDate($dateString)
         function searchName(element) {
             var match = false;
             var searchText = element.value;
-            const regex = new RegExp(searchText);
+            const regex = new RegExp(searchText,'i');
 
             var free = document.querySelector(".job_bloc");
             var freebloc = document.querySelectorAll(".job_bloc .job");
             var freeNames = free.querySelectorAll(".job .name");
 
             freebloc.forEach(free => {
-                free.style.opacity = "0";
+                // free.style.opacity = "0";
+                free.style.display = "none";
             })
 
             if (searchText == "") {
                 free.style.opacity = "1";
                 freebloc.forEach(free => {
-                    free.style.opacity = "1";
+                    // free.style.opacity = "1";
+                    free.style.display = "block";
                 })
 
                 document.querySelector(".none").style.display = "none";
@@ -329,7 +331,8 @@ function parseDate($dateString)
                 })
 
                 if (!match) {
-                    free.style.opacity = "0";
+                    // free.style.opacity = "0";
+                    free.style.display = "none";
                     document.querySelector(".none").style.display = "block";
                 }
             }
