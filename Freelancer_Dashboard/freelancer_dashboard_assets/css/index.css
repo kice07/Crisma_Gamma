@@ -485,8 +485,13 @@ body {
 }
 
 .nothing img{
-  height: 200px;
-  width: 200px;
+  height: 600px;
+  width: 600px;
+}
+
+.nothing p{
+    font-weight: bold;
+    font-size: 1.3em;
 }
 /*====== RIGHT======= */
 
