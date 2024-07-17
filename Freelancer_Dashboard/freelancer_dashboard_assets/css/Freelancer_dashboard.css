@@ -475,16 +475,23 @@ body {
     color: #7b0e13;
 }
 
-.left .bloc .nothing{
+.nothing{
     display: flex;
     flex-direction: column;
     gap: 3%;
     justify-content: center;
+    align-items: center;
+  
 }
 
-.left .bloc .nothing img{
-  height: 100px;
-  width: 100px;
+.nothing img{
+  height: 600px;
+  width: 600px;
+}
+
+.nothing p{
+    font-weight: bold;
+    font-size: 1.3em;
 }
 /*====== RIGHT======= */
 
