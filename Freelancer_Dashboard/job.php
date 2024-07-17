@@ -299,7 +299,7 @@ function parseDate($dateString)
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
         var matchElement = document.querySelector(".found");
-        console.log("what  i see :"+simulation);
+       
         function searchName(element) {
             var match = false;
             var found = 0;
