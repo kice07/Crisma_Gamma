@@ -32,6 +32,26 @@ $_SESSION['availability'] = $freelancer_row['availability'];
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/Freelancer_dashboard.css">
     <!-- <link rel="stylesheet" href="freelancer_dashboard_assets/css/index.css"> -->
+    <style>
+        .nothing {
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .nothing img {
+            height: 600px;
+            width: 600px;
+        }
+
+        .nothing p {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+    </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
@@ -121,7 +141,7 @@ $_SESSION['availability'] = $freelancer_row['availability'];
                     </div>
                 </div>
 
-                <div class="bloc"> 
+                <div class="bloc">
                     <div class="head">
                         <h3 class="translate">Contrats</h3>
                         <a class="download">
@@ -365,7 +385,7 @@ $_SESSION['availability'] = $freelancer_row['availability'];
             // with the generated calendar
             day.innerHTML = lit;
             weeksDay = day.querySelectorAll("li"); // Pour trigger les task
-          
+
         }
 
         manipulate();
