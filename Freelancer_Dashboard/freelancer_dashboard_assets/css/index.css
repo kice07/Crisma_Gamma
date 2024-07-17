@@ -480,11 +480,12 @@ body {
     flex-direction: column;
     gap: 3%;
     justify-content: center;
+    align-items: center;
 }
 
 .left .bloc .nothing img{
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
 }
 /*====== RIGHT======= */
 
