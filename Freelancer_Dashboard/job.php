@@ -298,11 +298,11 @@ function parseDate($dateString)
     <!-- Custom js -->
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
-        var simulation = document.querySelector(".found").textContent;
+        var matchElement = document.querySelector(".found");
         console.log("what  i see :"+simulation);
         function searchName(element) {
             var match = false;
-            var found = 0
+            var found = 0;
             var searchText = element.value;
             const regex = new RegExp(searchText,'i');
 
@@ -340,7 +340,7 @@ function parseDate($dateString)
                     free.style.display = "none";
                     document.querySelector(".none").style.display = "block";
                 }else{
-
+                    matchElement.innerHTML='<strong class="translate">Résultats trouvés</strong> ('+found+')'
                 }
             }
 
