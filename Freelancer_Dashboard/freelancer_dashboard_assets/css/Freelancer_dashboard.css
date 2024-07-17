@@ -475,7 +475,17 @@ body {
     color: #7b0e13;
 }
 
+.left .bloc .nothing{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    justify-content: center;
+}
 
+.left .bloc .nothing img{
+  height: 100px;
+  width: 100px;
+}
 /*====== RIGHT======= */
 
 /* -------- card */
@@ -664,127 +674,3 @@ header .calendar-current-date {
     background: #e4e1e1;
 }
 
-/* ------ task */
-.task-box {
-    height: 180px;
-    width: 100%;
-    padding: 2% 4%;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color:var(--third-grey) white;
-    border-radius: 16px;
-    margin-bottom: 2%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.task {
-    background-color: var(--main-blue);
-    display: flex;
-    border-radius: 5px;
-    margin-bottom: 2%;
-    padding: 2% 0;
-}
-
-.task .infos {
-    width: 80%;
-    padding: 4% 4%;
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.task .infos p {
-    color: white;
-    font-size: 1em;
-    margin-bottom: 3%;
-}
-
-.task .infos textarea {
-    align-self: flex-end;
-    width: 90%;
-    height: 20px;
-    max-height: 90px;
-    padding: 0% 2%;
-    outline: none;
-    resize: none;
-    font-size: 1em;
-    scrollbar-width: 0;
-    border: 0;
-    background-color: var(--main-blue);
-    color: white;
-
-    overflow: hidden;
-}
-
-.task .infos textarea::-webkit-scrollbar {
-    width: 0;
-}
-
-
-.task .infos textarea::placeholder {
-    color: var(--main-grey);
-
-}
-
-.task .options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-   
-
-    padding: 1.5% 0;
-    width: 20%;
-    /* background-color: blue; */
-}
-
-
-.task .options i {
-    padding: 1.5% 3%;
-    border-radius: 5px;
-    font-size: 1.5em;
-}
-
-.task .options i:hover {
-    cursor: pointer;
-}
-
-.task .options i:first-child {
-    background-color: #16c771;
-    color: #093a22;
-}
-
-.task .options i:first-child:hover {
-    background-color: #49c388;
-    
-}
-
-.task .options i:last-child {
-    background-color: #ff656b;
-    color: #8f2f32;
-}
-.task .options i:last-child:hover {
-    background-color: #fb7e82;
-    
-}
-
-.add_task{
-    
-    color: #129958;
-    margin-bottom: 2%;
-    font-size: 1em;
-    font-weight: bold;
-    align-self: flex-end;
-    transition: all .2s ease-in-out;
-    
-}
-
-.add_task:hover{
-    color: #16c771;
-    cursor: pointer;
-}
