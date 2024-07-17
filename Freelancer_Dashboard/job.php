@@ -156,14 +156,14 @@ function parseDate($dateString)
 
 
                 <button class="translate apply" onclick="ApplyFilter(this)">Appliquer</button>
-                <div class="call_to_action">
+                <!-- <div class="call_to_action">
                     <img src="freelancer_dashboard_assets/images/other/logo_strokes.png" alt="">
                     <p>Mutipliez vos opportunités en créeant plus de cv</p>
                     <a href="#">
                         <span>Vos cv</span>
                         <i class="ai-arrow-right"></i>
                     </a>
-                </div>
+                </div> -->
 
             </div>
 
