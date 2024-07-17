@@ -2,7 +2,7 @@
     <a href="index.php" class="logo"><img src="freelancer_dashboard_assets/images/crislogo.png" alt=""></a>
     <div class="middle">
         <ul>
-            <a href="jobs.php">
+            <a href="job.php">
                 <li class="translate">Liste d'offres</li>
             </a>
             <a href="portfolio.php">
