@@ -405,11 +405,12 @@ function parseDate($dateString)
             }
         }
 
-        function fethData() {
+        window.addEventListener('load',fetchData)
+        function fetchData() {
             let xhr = new XMLHttpRequest();
 
-            let subcatForm = new FormData();
-            subcatForm.append("action", "retrieve");
+            let filterForm = new FormData();
+            filterForm.append("action", "retrieve");
             xhr.open("POST", "freelancer_dashboard_assets/php_checking/get-job-api.php", true);
             xhr.onload = () => {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -421,7 +422,7 @@ function parseDate($dateString)
                 }
             }
 
-            xhr.send(subcatForm);
+            xhr.send(filterForm);
         }
         var starter = "<?php $starter ?>";
         displayRow(starter, document.querySelector(".job_bloc"));
