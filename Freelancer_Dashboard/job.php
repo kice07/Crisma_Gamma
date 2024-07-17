@@ -316,6 +316,7 @@ function parseDate($dateString)
             })
 
             if (searchText == "") {
+                matchElement.innerHTML='<strong class="translate">Résultats trouvés</strong> ('+<?php echo mysqli_num_rows($jobs_query) ?>+')'
                 free.style.opacity = "1";
                 freebloc.forEach(free => {
                     // free.style.opacity = "1";
