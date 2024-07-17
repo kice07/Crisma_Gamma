@@ -29,7 +29,7 @@ $_SESSION['availability'] = $freelancer_row['availability'];
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
+    <link rel="stylesheet" href="freelancer_dashboard_assets/css/Navbar.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/Freelancer_dashboard.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
