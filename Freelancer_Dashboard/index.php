@@ -121,7 +121,7 @@ $_SESSION['availability'] = $freelancer_row['availability'];
                     </div>
                 </div>
 
-                <div class="bloc">
+                <div class="bloc"> 
                     <div class="head">
                         <h3 class="translate">Contrats</h3>
                         <a class="download">
