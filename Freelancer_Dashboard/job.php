@@ -325,7 +325,8 @@ function parseDate($dateString)
                 freeNames.forEach((free, index) => {
                     if (regex.test(free.textContent)) {
                         document.querySelector(".none").style.display = "none";
-                        freebloc[index].style.opacity = "1";
+                        // freebloc[index].style.opacity = "1";
+                        freebloc[index].style.display = "block";
                         match = true;
                     }
                 })
