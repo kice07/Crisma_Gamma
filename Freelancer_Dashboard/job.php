@@ -171,7 +171,7 @@ function parseDate($dateString)
 
 
 
-                <button class="translate apply" style="margin-top:3%" onclick="ApplyFilter(this)">Appliquer</button>
+                <button class="translate apply" style="margin-top:20%" onclick="ApplyFilter(this)">Appliquer</button>
 
 
             </div>
