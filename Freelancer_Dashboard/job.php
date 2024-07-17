@@ -24,10 +24,10 @@ function parseDate($dateString)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="freelancer_dashboard_assets/css/Job.css">
+    <link rel="stylesheet" href="freelancer_dashboard_assets/css/jobs.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
 
-    <style>
+    <!-- <style>
         .main_content .left::-webkit-scrollbar {
             width: 5px;
         }
@@ -41,7 +41,7 @@ function parseDate($dateString)
            
             cursor: pointer;
         }
-    </style>
+    </style> -->
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
