@@ -78,7 +78,7 @@ $_SESSION['availability'] = $freelancer_row['availability'];
                 <h3 class="translate">Bienvenu Ehouman Ivan</h3>
                 <div class="options">
                     <a class="resume">
-                        <p class="translate">Vos cv</p>
+                        <p class="translate" style="cursor: pointer;">Vos cv</p>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
 
