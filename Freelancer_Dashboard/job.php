@@ -172,7 +172,7 @@ function parseDate($dateString)
             <!-- ====== RIGHT====== -->
             <div class="right">
                 <div class="head">
-                    <p> <strong class="translate">Résultats trouvés</strong> (<?php echo mysqli_num_rows($jobs_query) ?>)</p>
+                    <p class="found"> <strong class="translate">Résultats trouvés</strong> (<?php echo mysqli_num_rows($jobs_query) ?>)</p>
                     <div class="sort">
                         <p class="translate">rangée par</p>
                         <span class="translate">date de publication</span>
@@ -298,8 +298,11 @@ function parseDate($dateString)
     <!-- Custom js -->
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
+        var simulation = document.querySelector(".found").textContent;
+        console.log("what  i see :"+simulation);
         function searchName(element) {
             var match = false;
+            var found = 0
             var searchText = element.value;
             const regex = new RegExp(searchText,'i');
 
@@ -328,6 +331,7 @@ function parseDate($dateString)
                         // freebloc[index].style.opacity = "1";
                         freebloc[index].style.display = "block";
                         match = true;
+                        found++;
                     }
                 })
 
@@ -335,6 +339,8 @@ function parseDate($dateString)
                     // free.style.opacity = "0";
                     free.style.display = "none";
                     document.querySelector(".none").style.display = "block";
+                }else{
+
                 }
             }
 
