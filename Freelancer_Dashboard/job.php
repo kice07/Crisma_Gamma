@@ -331,7 +331,7 @@ function parseDate($dateString)
                         let data = xhr.response;
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
-                        displayData(dataList);
+                        displayData(dataList,counter);
                         pageNumber = dataList.lenght / 6;
                         document.querySelector(".pageNumber").textContent = pageNumber;
                         console.log(data);
@@ -524,7 +524,6 @@ function parseDate($dateString)
                 jobBloc.style.display = "none";
                 var noneText = jobBloc.previousElementSibling.style.display = "block";
             } else {
-                counter = 1;
                 displayData(actualData, counter);
             }
 
