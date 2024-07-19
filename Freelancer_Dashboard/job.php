@@ -349,7 +349,7 @@ function parseDate($dateString)
             while (counter != (start * 6) - 1) {
                 if (counter == dataArray.lenght - 1)
                     break;
-                innner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
+                inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
                             <!-- up job -->
                             <div class="top">
                                 <div class="row first">
