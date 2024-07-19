@@ -231,7 +231,7 @@ function parseDate($dateString)
         var actualData = [];
         var featureList = [];
         var pageNumber;
-        var counter = 1;
+        var Ncounter = 1;
 
         function searchName(element) {
             var match = false;
@@ -287,29 +287,29 @@ function parseDate($dateString)
             table = element.previousElementSiblings;
             var mids = element.parentElement.querySelectorAll(".numbers .mid");
             if (side == "back") {
-                if (counter > 0) {
-                    counter--;
+                if (Ncounter > 0) {
+                    Ncounter--;
                     if (mids[0].textContent == "2") {
                         mids.forEach(mid => {
                             mid.classList.add("hide");
-                            displayData(actualData, counter);
+                            displayData(actualData, Ncounter);
                         })
                     } else {
                         mids[0].textContent = parseInt(mids[0].textContent) - 1;
-                        displayData(actualData, counter);
+                        displayData(actualData, Ncounter);
                     }
                 }
 
             } else {
-                if (counter++ < pageNumber) {
-                    counter++;
+                if (Ncounter++ < pageNumber) {
+                    Ncounter++;
                     if (mids[0].classList.contains("hide")) {
                         mids.forEach(mid => {
                             mid.classList.remove("hide");
-                            displayData(actualData, counter);
+                            displayData(actualData, Ncounter);
                         })
                     } else {
-                        displayData(actualData, counter);
+                        displayData(actualData, Ncounter);
                         mids[0].textContent = parseInt(mids[0].textContent) + 1;
                     }
                 }
@@ -331,7 +331,7 @@ function parseDate($dateString)
                         let data = xhr.response;
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
-                        displayData(dataList,counter);
+                        displayData(dataList,Ncounter);
                         pageNumber = dataList.lenght / 6;
                         document.querySelector(".pageNumber").textContent = pageNumber;
                         console.log(data);
@@ -382,8 +382,8 @@ function parseDate($dateString)
                 }
                 inner += `
                                     <div class="job_detail">
-                                        <span class="translate"><?php echo $row['job_type'] ?></span>
-                                        <span class="translate"><?php echo $row['experience'] ?></span>
+                                        <span class="translate"> ${dataArray[counter].job_type}</span>
+                                        <span class="translate"> ${dataArray[counter].experience}</span>
                                         <span class="translate">Un details</span>
                                     </div>`;
 
@@ -418,7 +418,7 @@ function parseDate($dateString)
                 counter++;
             }
 
-            jobBloc.innerHTML = inner
+            jobBloc.innerHTML = inner;
         }
 
         function setFeature(element) {
@@ -524,13 +524,13 @@ function parseDate($dateString)
                 jobBloc.style.display = "none";
                 var noneText = jobBloc.previousElementSibling.style.display = "block";
             } else {
-                displayData(actualData, counter);
+                displayData(actualData, Ncounter);
             }
 
         }
 
         function resetFilter(this) {
-            featureList = []
+        
             var checkboxes = document.querySelectorAll(".check");
 
             checkboxes.forEach(checkbox => {
@@ -541,10 +541,10 @@ function parseDate($dateString)
                 }
             })
 
-            counter = 1;
+            Ncounter = 1;
             var jobBloc = document.querySelector(".job_bloc");
             jobBloc.style.display = "block";
-            displayData(dataList,counter)
+            displayData(dataList,Ncounter)
             var noneText = jobBloc.previousElementSibling.style.display = "none";
 
         }
