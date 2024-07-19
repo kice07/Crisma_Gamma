@@ -227,7 +227,7 @@ function parseDate($dateString)
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
         var matchElement = document.querySelector(".found");
-        const dataList = [];
+        var dataList = [];
         var actualData = [];
         var featureList = [];
         var pageNumber;
