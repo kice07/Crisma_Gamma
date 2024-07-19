@@ -227,7 +227,7 @@ function parseDate($dateString)
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script>
         var matchElement = document.querySelector(".found");
-        var dataList = [];
+        const dataList = [];
         var actualData = [];
         var featureList = [];
         var pageNumber;
@@ -435,7 +435,7 @@ function parseDate($dateString)
             }
         }
 
-        function ApplyFilter(this) {
+        function ApplyFilter(element) {
             for (var i = 0; i < featureList.length; i++) {
                 var params = featureList[i].split("_");
                 switch (params[0]) {
@@ -529,7 +529,7 @@ function parseDate($dateString)
 
         }
 
-        function resetFilter(this) {
+        function resetFilter(element) {
         
             var checkboxes = document.querySelectorAll(".check");
 
