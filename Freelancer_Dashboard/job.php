@@ -354,8 +354,8 @@ function parseDate($dateString)
             const jobBloc = document.querySelector(".job_bloc");
             var inner = ``;
             var counter = (start == 1) ? 0 : ((start - 1) * 6) - 1;
-            while (counter < ((start+1) * 6)) {
-                if (counter == dataArray.length - 1)
+            while (counter < ((start +1) * 6)) {
+                if (counter == dataArray.length)
                     break;
                 inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
                             <!-- up job -->
