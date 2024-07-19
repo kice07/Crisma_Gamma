@@ -388,9 +388,9 @@ function parseDate($dateString)
                                     </div>`;
 
                 const dateToCheck2 = dataArray[counter].post_date;
-                var parsedDate = new Date(dateToCheck2);
-                var currentDate = new Date();
-                let diffInMs = Math.abs(currentDate - parsedDate);
+                var parsedDate2 = new Date(dateToCheck2);
+                var currentDate2 = new Date();
+                let diffInMs = Math.abs(currentDate2 - parsedDate2);
                 let diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
 
