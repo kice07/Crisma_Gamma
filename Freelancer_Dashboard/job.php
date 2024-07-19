@@ -101,7 +101,7 @@ function parseDate($dateString)
             <div class="left" style="overflow-y:scroll;">
                 <div class="head">
                     <h3 class="translate">Filtre</h3>
-                    <span class="translate" onclick="resetFilter(this)">Effacer</span>
+                    <span class="translate" onclick="resetFilter()">Effacer</span>
                 </div>
 
                 <!-- features -->
@@ -171,7 +171,7 @@ function parseDate($dateString)
 
 
 
-                <button class="translate apply" style="margin-top:20%" onclick="ApplyFilter(this)">Appliquer</button>
+                <button class="translate apply" style="margin-top:20%" onclick="applyFilter()">Appliquer</button>
 
 
             </div>
@@ -435,7 +435,7 @@ function parseDate($dateString)
             }
         }
 
-        function ApplyFilter(element) {
+        function applyFilter() {
             for (var i = 0; i < featureList.length; i++) {
                 var params = featureList[i].split("_");
                 switch (params[0]) {
@@ -529,7 +529,7 @@ function parseDate($dateString)
 
         }
 
-        function resetFilter(element) {
+        function resetFilter() {
         
             var checkboxes = document.querySelectorAll(".check");
 
