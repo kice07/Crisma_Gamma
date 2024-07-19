@@ -331,8 +331,8 @@ function parseDate($dateString)
                         let data = xhr.response;
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
-                        displayData(dataList,Ncounter);
-                        pageNumber = dataList.lenght / 6;
+                        displayData(dataList, Ncounter);
+                        var pageNumber = dataList.length / 6;
                         document.querySelector(".pageNumber").textContent = pageNumber;
                         console.log(data);
                     }
@@ -342,12 +342,20 @@ function parseDate($dateString)
             xhr.send(filterForm);
         }
 
+        function parseDate(dateString) {
+            const parts = dateString.split('/');
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1; // Les mois sont de 0 à 11
+            const year = parseInt(parts[2], 10);
+            return new Date(year, month, day);
+        }
+
         function displayData(dataArray, start) {
             const jobBloc = document.querySelector(".job_bloc");
             var inner = ``;
             var counter = (start == 1) ? 0 : ((start - 1) * 6) - 1;
             while (counter != (start * 6) - 1) {
-                if (counter == dataArray.lenght - 1)
+                if (counter == dataArray.length - 1)
                     break;
                 inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
                             <!-- up job -->
@@ -372,7 +380,7 @@ function parseDate($dateString)
 
                 // Récupérer la date d'expiration à partir de row
                 const dateToCheck = dataArray[counter].expire_date;
-                const parsedDate = new Date(dateToCheck);
+                const parsedDate = new parseDate(dateToCheck);
                 const currentDate = new Date();
 
                 if (parsedDate > currentDate) {
@@ -387,12 +395,19 @@ function parseDate($dateString)
                                         <span class="translate">Un details</span>
                                     </div>`;
 
-                const dateToCheck2 = dataArray[counter].post_date;
-                var parsedDate2 = new Date(dateToCheck2);
-                var currentDate2 = new Date();
-                let diffInMs = Math.abs(currentDate2 - parsedDate2);
-                let diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
+
+                // Convertir la date à vérifier
+                var parsedDate2 = parseDate(dataArray[counter].post_date);
+
+                // Obtenir la date actuelle
+                var currentDate2 = new Date();
+
+                // Calculer la différence en millisecondes
+                let diffInMs = Math.abs(currentDate2 - parsedDate2);
+
+                // Convertir la différence en jours
+                let diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
                 // $newdate =  daysDifference - 1;
                 if (diffInDays == 0) {
@@ -530,7 +545,7 @@ function parseDate($dateString)
         }
 
         function resetFilter() {
-        
+
             var checkboxes = document.querySelectorAll(".check");
 
             checkboxes.forEach(checkbox => {
@@ -544,7 +559,7 @@ function parseDate($dateString)
             Ncounter = 1;
             var jobBloc = document.querySelector(".job_bloc");
             jobBloc.style.display = "block";
-            displayData(dataList,Ncounter)
+            displayData(dataList, Ncounter)
             var noneText = jobBloc.previousElementSibling.style.display = "none";
 
         }
