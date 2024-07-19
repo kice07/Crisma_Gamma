@@ -354,7 +354,7 @@ function parseDate($dateString)
             const jobBloc = document.querySelector(".job_bloc");
             var inner = ``;
             var counter = (start == 1) ? 0 : ((start - 1) * 6) - 1;
-            while (counter != (start * 6) - 1) {
+            while (counter <= (start * 6) - 1) {
                 if (counter == dataArray.length - 1)
                     break;
                 inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
@@ -384,7 +384,7 @@ function parseDate($dateString)
                 const currentDate = new Date();
 
                 if (parsedDate > currentDate) {
-                    inner += `<span class="translate match">Disponible jusqu'au " + ${dataArray[counter].expire_date}</span>`;
+                    inner += `<span class="translate match">Disponible jusqu'au  ${dataArray[counter].expire_date}</span>`;
                 } else {
                     inner += `<span class="translate match">offre indisponible</span>`
                 }
