@@ -2,7 +2,7 @@
 include("../config.php");
 session_start();
 
-$jobs_query = mysqli_query($conn, "SELECT * FROM jobs");
+
 $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
 $total_row = mysqli_num_rows($jobs_query);
@@ -181,7 +181,7 @@ function parseDate($dateString)
             <!-- ====== RIGHT====== -->
             <div class="right">
                 <div class="head">
-                    <p class="found"> <strong class="translate">Résultats trouvés</strong> (<?php echo mysqli_num_rows($jobs_query) ?>)</p>
+                    <p class="found"> </p>
                     <div class="sort">
                         <p class="translate">rangée par</p>
                         <span class="translate">date de publication</span>
@@ -334,6 +334,8 @@ function parseDate($dateString)
                         displayData(dataList, Ncounter);
                         var pageNumber = dataList.length / 6;
                         document.querySelector(".pageNumber").textContent = pageNumber;
+
+
                         console.log(data);
                     }
                 }
@@ -434,6 +436,8 @@ function parseDate($dateString)
             }
 
             jobBloc.innerHTML = inner;
+            var found = document.querySelector(".right .head .found");
+            found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`
         }
 
         function setFeature(element) {
@@ -453,7 +457,7 @@ function parseDate($dateString)
             }
 
             console.log("Feature_List :")
-            featureList.forEach(item=>{
+            featureList.forEach(item => {
                 console.log(item)
             })
         }
@@ -465,7 +469,7 @@ function parseDate($dateString)
                     case "Type":
                         if (actualData.length != 0) {
                             actualData.forEach(item => {
-                                if (item.job_type == params[1]) {
+                                if (item.job_type != params[1]) {
                                     actualData.splice(actualData.indexOf(item), 1);
                                 }
                             })
@@ -541,7 +545,7 @@ function parseDate($dateString)
                     case "Sous categorie" || "Sub category":
                         if (actualData.length != 0) {
                             actualData.forEach(item => {
-                                if (item.job_sub_category == params[1]) {
+                                if (item.job_sub_category != params[1]) {
                                     actualData.splice(actualData.indexOf(item), 1);
                                 }
                             })
