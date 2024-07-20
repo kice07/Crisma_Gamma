@@ -448,6 +448,8 @@ function parseDate($dateString)
             } else {
                 featureList.push(sectionName + "_" + featureLabel)
             }
+
+            console.log("Feature_List :"+featureList.toString)
         }
 
         function applyFilter() {
