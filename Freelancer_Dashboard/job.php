@@ -457,6 +457,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     switch (params[0]) {
                         case "Type":
                             console.log("entered type");
+                            console.table(actualData);
                             actualData = actualData.filter(item => item.job_type === params[1]);
                             console.table(actualData);
                             break;
