@@ -470,7 +470,10 @@ function parseDate($dateString)
                                 }
                             })
                         }
+
+                        console.table(actualData);
                         break;
+
                     case "Experience":
                         if (actualData.length != 0) {
                             var paramText = params[1].split(" ");
@@ -501,7 +504,7 @@ function parseDate($dateString)
                                     break;
                             }
                         }
-
+                        console.table(actualData);
                         break;
                     case "Salaire" || "Salary":
 
@@ -511,7 +514,7 @@ function parseDate($dateString)
                             switch (paramText[0]) {
                                 case "moins" || "less":
                                     actualData.forEach(item => {
-                                        if (parseInt(item.salary.split(" ")[0]) >= parseInt(paramText[1])) {
+                                        if (parseInt(item.salary.split(" ")[0]) >= parseInt(paramText[2])) {
                                             actualData.splice(actualData.indexOf(item), 1);
                                         }
                                     })
@@ -533,7 +536,7 @@ function parseDate($dateString)
                                     break;
                             }
                         }
-
+                        console.table(actualData);
                         break;
                     case "Sous categorie" || "Sub category":
                         if (actualData.length != 0) {
@@ -543,6 +546,7 @@ function parseDate($dateString)
                                 }
                             })
                         }
+                        console.table(actualData);
                         break;
 
                 }
