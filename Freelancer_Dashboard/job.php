@@ -438,12 +438,12 @@ function parseDate($dateString)
 
         function setFeature(element) {
             var isChecked = element.classList.contains("checked");
-            console.log(isChecked);
+            // console.log(isChecked);
             var sectionName = element.parentElement.parentElement.querySelector("p").textContent;
-            console.log(sectionName);
+            // console.log(sectionName);
             var featureLabel = element.nextElementSibling.textContent;
-            console.log(featureLabel);
-            if (isChecked) {
+            // console.log(featureLabel);
+            if (!isChecked) {
                 const index = featureList.indexOf(sectionName + "_" + featureLabel);
                 if (index > -1) {
                     featureList.splice(index, 1);
