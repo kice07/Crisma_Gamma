@@ -449,86 +449,88 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         }
 
         function applyFilter() {
-            for (let i = 0; i < featureList.length; i++) {
-                let params = featureList[i].split("_");
-                let paramText;
-                switch (params[0]) {
-                    case "Type":
-                        if (actualData.length !== 0) {
-                            actualData = actualData.filter(item => item.job_type === params[1]);
-                        }
-                        console.table(actualData);
-                        break;
-
-                    case "Experience":
-                        if (actualData.length !== 0) {
-                            paramText = params[1].split(" ");
-                            switch (paramText[0]) {
-                                case "moins":
-                                case "less":
-                                    actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]));
-                                    break;
-                                case "entre":
-                                case "between":
-                                    actualData = actualData.filter(item => {
-                                        let experience = parseInt(item.experience.split(" ")[0]);
-                                        return experience >= parseInt(paramText[1]) && experience <= parseInt(paramText[3]);
-                                    });
-                                    break;
-                                case "plus":
-                                case "more":
-                                    actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) > parseInt(paramText[2]));
-                                    break;
+            if (featureList.length > 0) {
+                for (let i = 0; i < featureList.length; i++) {
+                    let params = featureList[i].split("_");
+                    let paramText;
+                    switch (params[0]) {
+                        case "Type":
+                            if (actualData.length !== 0) {
+                                actualData = actualData.filter(item => item.job_type === params[1]);
                             }
-                        }
-                        console.table(actualData);
-                        break;
+                            console.table(actualData);
+                            break;
 
-                    case "Salaire":
-                    case "Salary":
-                        if (actualData.length !== 0) {
-                            paramText = params[1].split(" ");
-                            switch (paramText[0]) {
-                                case "moins":
-                                case "less":
-                                    actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) < parseInt(paramText[2]));
-                                    break;
-                                case "entre":
-                                case "between":
-                                    actualData = actualData.filter(item => {
-                                        let salary = parseInt(item.salary.split(" ")[0]);
-                                        return salary >= parseInt(paramText[1]) && salary <= parseInt(paramText[3]);
-                                    });
-                                    break;
-                                case "plus":
-                                case "more":
-                                    actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) > parseInt(paramText[2]));
-                                    break;
+                        case "Experience":
+                            if (actualData.length !== 0) {
+                                paramText = params[1].split(" ");
+                                switch (paramText[0]) {
+                                    case "moins":
+                                    case "less":
+                                        actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]));
+                                        break;
+                                    case "entre":
+                                    case "between":
+                                        actualData = actualData.filter(item => {
+                                            let experience = parseInt(item.experience.split(" ")[0]);
+                                            return experience >= parseInt(paramText[1]) && experience <= parseInt(paramText[3]);
+                                        });
+                                        break;
+                                    case "plus":
+                                    case "more":
+                                        actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) > parseInt(paramText[2]));
+                                        break;
+                                }
                             }
-                        }
-                        console.table(actualData);
-                        break;
+                            console.table(actualData);
+                            break;
 
-                    case "Sous categorie":
-                    case "Sub category":
-                        if (actualData.length !== 0) {
-                            actualData = actualData.filter(item => item.job_sub_category === params[1]);
-                        }
-                        console.table(actualData);
+                        case "Salaire":
+                        case "Salary":
+                            if (actualData.length !== 0) {
+                                paramText = params[1].split(" ");
+                                switch (paramText[0]) {
+                                    case "moins":
+                                    case "less":
+                                        actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) < parseInt(paramText[2]));
+                                        break;
+                                    case "entre":
+                                    case "between":
+                                        actualData = actualData.filter(item => {
+                                            let salary = parseInt(item.salary.split(" ")[0]);
+                                            return salary >= parseInt(paramText[1]) && salary <= parseInt(paramText[3]);
+                                        });
+                                        break;
+                                    case "plus":
+                                    case "more":
+                                        actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) > parseInt(paramText[2]));
+                                        break;
+                                }
+                            }
+                            console.table(actualData);
+                            break;
+
+                        case "Sous categorie":
+                        case "Sub category":
+                            if (actualData.length !== 0) {
+                                actualData = actualData.filter(item => item.job_sub_category === params[1]);
+                            }
+                            console.table(actualData);
+                            break;
+                    }
+
+                    if (actualData.length === 0) {
                         break;
+                    }
                 }
 
                 if (actualData.length === 0) {
-                    break;
+                    let jobBloc = document.querySelector(".job_bloc");
+                    jobBloc.style.display = "none";
+                    jobBloc.previousElementSibling.style.display = "block";
+                } else {
+                    displayData(actualData, Ncounter);
                 }
-            }
-
-            if (actualData.length === 0) {
-                let jobBloc = document.querySelector(".job_bloc");
-                jobBloc.style.display = "none";
-                jobBloc.previousElementSibling.style.display = "block";
-            } else {
-                displayData(actualData, Ncounter);
             }
         }
 
