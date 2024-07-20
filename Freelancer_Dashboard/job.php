@@ -106,7 +106,7 @@ function parseDate($dateString)
 
                 <!-- features -->
                 <div class="feature subcat">
-                    <p>sous categorie</p>
+                    <p>Sous categorie</p>
 
                 </div>
                 <div class="feature">
@@ -354,7 +354,7 @@ function parseDate($dateString)
             const jobBloc = document.querySelector(".job_bloc");
             var inner = ``;
             var counter = (start == 1) ? 0 : ((start - 1) * 6) - 1;
-            while (counter < ((start +1) * 6)) {
+            while (counter < ((start + 1) * 6)) {
                 if (counter == dataArray.length)
                     break;
                 inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
@@ -527,6 +527,16 @@ function parseDate($dateString)
                         }
 
                         break;
+                    case "Sous categorie" || "Sub category":
+                        if (actualData.length != 0) {
+                            actualData.foreach(item => {
+                                if (item.job_sub_category == params[1]) {
+                                    actualData.splice(actualData.indexOf(item), 1);
+                                }
+                            })
+                        }
+                        break;
+
                 }
 
                 if (actualData.length == 0) {
@@ -546,21 +556,24 @@ function parseDate($dateString)
 
         function resetFilter() {
 
-            var checkboxes = document.querySelectorAll(".check");
+            if (featureList.length > 0) {
+                var checkboxes = document.querySelectorAll(".check");
 
-            checkboxes.forEach(checkbox => {
-                if (checkbox.classList.contains("checked")) {
-                    checkbox.classList.remove("checked");
-                    checkbox.nextElementSibling.style.color = "#969999";
-                    checkbox.nextElementSibling.style.fontWeight = "normal";
-                }
-            })
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.classList.contains("checked")) {
+                        checkbox.classList.remove("checked");
+                        checkbox.nextElementSibling.style.color = "#969999";
+                        checkbox.nextElementSibling.style.fontWeight = "normal";
+                    }
+                })
 
-            Ncounter = 1;
-            var jobBloc = document.querySelector(".job_bloc");
-            jobBloc.style.display = "block";
-            displayData(dataList, Ncounter)
-            var noneText = jobBloc.previousElementSibling.style.display = "none";
+                Ncounter = 1;
+                var jobBloc = document.querySelector(".job_bloc");
+                jobBloc.style.display = "block";
+                displayData(dataList, Ncounter)
+                var noneText = jobBloc.previousElementSibling.style.display = "none";
+            }
+
 
         }
     </script>

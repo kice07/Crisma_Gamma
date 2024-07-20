@@ -15,7 +15,7 @@ if ($_POST["action"] == "getsub") {
             $id =  $row['id'];
             $numLabel = mysqli_num_rows(mysqli_query($conn, "SELECT position FROM resume WHERE sous_category ='{$label}'"));
             $output .=  ' <div class="box" id="' . $id . '">
-                                <div class="check sub_cat" onclick="toggleCheckbox(this)"><i class="bx bx-check"></i></div>
+                                <div class="check sub_cat" onclick="toggleCheckbox(this);setFeature(this)"><i class="bx bx-check"></i></div>
                                 <span class="translate">' . $label . '</span>
                           </div> ';
         }
