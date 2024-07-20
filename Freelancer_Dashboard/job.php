@@ -464,7 +464,7 @@ function parseDate($dateString)
                 switch (params[0]) {
                     case "Type":
                         if (actualData.length != 0) {
-                            actualData.foreach(item => {
+                            actualData.forEach(item => {
                                 if (item.job_type == params[1]) {
                                     actualData.splice(actualData.indexOf(item), 1);
                                 }
@@ -478,14 +478,14 @@ function parseDate($dateString)
 
                             switch (paramText[0]) {
                                 case "moins" || "less":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if (parseInt(item.experience.split(" ")[0]) >= parseInt(paramText[1])) {
                                             actualData.splice(actualData.indexOf(item), 1);
                                         }
                                     })
                                     break;
                                 case "entre" || "between":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if ((parseInt(item.experience.split(" ")[0]) > parseInt(paramText[3])) ||
                                             (parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]))) {
                                             actualData.splice(actualData.indexOf(item), 1);
@@ -493,7 +493,7 @@ function parseDate($dateString)
                                     })
                                     break;
                                 case "plus" || "more":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if (parseInt(item.experience.split(" ")[0]) <= parseInt(paramText[2])) {
                                             actualData.splice(actualData.indexOf(item), 1);
                                         }
@@ -510,14 +510,14 @@ function parseDate($dateString)
 
                             switch (paramText[0]) {
                                 case "moins" || "less":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if (parseInt(item.salary.split(" ")[0]) >= parseInt(paramText[1])) {
                                             actualData.splice(actualData.indexOf(item), 1);
                                         }
                                     })
                                     break;
                                 case "entre" || "between":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if ((parseInt(item.salary.split(" ")[0]) > parseInt(paramText[3])) ||
                                             (parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]))) {
                                             actualData.splice(actualData.indexOf(item), 1);
@@ -525,7 +525,7 @@ function parseDate($dateString)
                                     })
                                     break;
                                 case "plus" || "more":
-                                    actualData.foreach(item => {
+                                    actualData.forEach(item => {
                                         if (parseInt(item.salary.split(" ")[0]) <= parseInt(paramText[2])) {
                                             actualData.splice(actualData.indexOf(item), 1);
                                         }
@@ -537,7 +537,7 @@ function parseDate($dateString)
                         break;
                     case "Sous categorie" || "Sub category":
                         if (actualData.length != 0) {
-                            actualData.foreach(item => {
+                            actualData.forEach(item => {
                                 if (item.job_sub_category == params[1]) {
                                     actualData.splice(actualData.indexOf(item), 1);
                                 }
