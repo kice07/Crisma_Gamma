@@ -336,7 +336,7 @@ function parseDate($dateString)
                         document.querySelector(".pageNumber").textContent = pageNumber;
 
 
-                        console.log(data);
+                        console.table(dataList);
                     }
                 }
             }
@@ -585,8 +585,9 @@ function parseDate($dateString)
 
                 Ncounter = 1;
                 var jobBloc = document.querySelector(".job_bloc");
-                jobBloc.style.display = "block";
                 displayData(dataList, Ncounter)
+                jobBloc.style.display = "block";
+                
                 var noneText = jobBloc.previousElementSibling.style.display = "none";
             }
 
