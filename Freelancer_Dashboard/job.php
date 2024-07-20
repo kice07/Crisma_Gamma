@@ -2,7 +2,7 @@
 include("../config.php");
 session_start();
 
-$cat_query =mysqli_query($conn,"SELECT * FROM job_category");
+$cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -235,7 +235,7 @@ $cat_query =mysqli_query($conn,"SELECT * FROM job_category");
             })
 
             if (searchText == "") {
-                matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + dataList.length+ ')'
+                matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + dataList.length + ')'
                 free.style.opacity = "1";
                 freebloc.forEach(free => {
                     // free.style.opacity = "1";
@@ -449,113 +449,87 @@ $cat_query =mysqli_query($conn,"SELECT * FROM job_category");
         }
 
         function applyFilter() {
-            for (var i = 0; i < featureList.length; i++) {
-                var params = featureList[i].split("_");
+            for (let i = 0; i < featureList.length; i++) {
+                let params = featureList[i].split("_");
+                let paramText;
                 switch (params[0]) {
                     case "Type":
-                        if (actualData.length != 0) {
-                            actualData.forEach(item => {
-                                if (item.job_type != params[1]) {
-                                    actualData.splice(actualData.indexOf(item), 1);
-                                }else{
-                                    console.log(item)
-                                }
-                            })
+                        if (actualData.length !== 0) {
+                            actualData = actualData.filter(item => item.job_type === params[1]);
                         }
-
                         console.table(actualData);
                         break;
 
                     case "Experience":
-                        if (actualData.length != 0) {
-                            var paramText = params[1].split(" ");
-
-
+                        if (actualData.length !== 0) {
+                            paramText = params[1].split(" ");
                             switch (paramText[0]) {
-                                case "moins" || "less":
-                                    actualData.forEach(item => {
-                                        if (parseInt(item.experience.split(" ")[0]) >= parseInt(paramText[1])) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "moins":
+                                case "less":
+                                    actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]));
                                     break;
-                                case "entre" || "between":
-                                    actualData.forEach(item => {
-                                        if ((parseInt(item.experience.split(" ")[0]) > parseInt(paramText[3])) ||
-                                            (parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]))) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "entre":
+                                case "between":
+                                    actualData = actualData.filter(item => {
+                                        let experience = parseInt(item.experience.split(" ")[0]);
+                                        return experience >= parseInt(paramText[1]) && experience <= parseInt(paramText[3]);
+                                    });
                                     break;
-                                case "plus" || "more":
-                                    actualData.forEach(item => {
-                                        if (parseInt(item.experience.split(" ")[0]) <= parseInt(paramText[2])) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "plus":
+                                case "more":
+                                    actualData = actualData.filter(item => parseInt(item.experience.split(" ")[0]) > parseInt(paramText[2]));
                                     break;
                             }
                         }
                         console.table(actualData);
                         break;
-                    case "Salaire" || "Salary":
 
-                        if (actualData.length != 0) {
-                            var paramText = params[1].split(" ");
-
+                    case "Salaire":
+                    case "Salary":
+                        if (actualData.length !== 0) {
+                            paramText = params[1].split(" ");
                             switch (paramText[0]) {
-                                case "moins" || "less":
-                                    actualData.forEach(item => {
-                                        if (parseInt(item.salary.split(" ")[0]) >= parseInt(paramText[2])) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "moins":
+                                case "less":
+                                    actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) < parseInt(paramText[2]));
                                     break;
-                                case "entre" || "between":
-                                    actualData.forEach(item => {
-                                        if ((parseInt(item.salary.split(" ")[0]) > parseInt(paramText[3])) ||
-                                            (parseInt(item.experience.split(" ")[0]) < parseInt(paramText[1]))) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "entre":
+                                case "between":
+                                    actualData = actualData.filter(item => {
+                                        let salary = parseInt(item.salary.split(" ")[0]);
+                                        return salary >= parseInt(paramText[1]) && salary <= parseInt(paramText[3]);
+                                    });
                                     break;
-                                case "plus" || "more":
-                                    actualData.forEach(item => {
-                                        if (parseInt(item.salary.split(" ")[0]) <= parseInt(paramText[2])) {
-                                            actualData.splice(actualData.indexOf(item), 1);
-                                        }
-                                    })
+                                case "plus":
+                                case "more":
+                                    actualData = actualData.filter(item => parseInt(item.salary.split(" ")[0]) > parseInt(paramText[2]));
                                     break;
                             }
                         }
                         console.table(actualData);
                         break;
-                    case "Sous categorie" || "Sub category":
-                        if (actualData.length != 0) {
-                            actualData.forEach(item => {
-                                if (item.job_sub_category != params[1]) {
-                                    actualData.splice(actualData.indexOf(item), 1);
-                                }
-                            })
+
+                    case "Sous categorie":
+                    case "Sub category":
+                        if (actualData.length !== 0) {
+                            actualData = actualData.filter(item => item.job_sub_category === params[1]);
                         }
                         console.table(actualData);
                         break;
-
                 }
 
-                if (actualData.length == 0) {
+                if (actualData.length === 0) {
                     break;
                 }
             }
 
-            if (actualData.length == 0) {
-                var jobBloc = document.querySelector(".job_bloc");
+            if (actualData.length === 0) {
+                let jobBloc = document.querySelector(".job_bloc");
                 jobBloc.style.display = "none";
-                var noneText = jobBloc.previousElementSibling.style.display = "block";
+                jobBloc.previousElementSibling.style.display = "block";
             } else {
                 displayData(actualData, Ncounter);
             }
-
         }
 
         function resetFilter() {
@@ -575,7 +549,7 @@ $cat_query =mysqli_query($conn,"SELECT * FROM job_category");
                 var jobBloc = document.querySelector(".job_bloc");
                 displayData(dataList, Ncounter)
                 jobBloc.style.display = "block";
-                
+
                 var noneText = jobBloc.previousElementSibling.style.display = "none";
             }
 
