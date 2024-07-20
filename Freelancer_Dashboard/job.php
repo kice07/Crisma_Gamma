@@ -450,7 +450,7 @@ function parseDate($dateString)
             }
 
             console.log("Feature_List :")
-            featureList.foreach(item=>{
+            featureList.forEach(item=>{
                 console.log(item)
             })
         }
