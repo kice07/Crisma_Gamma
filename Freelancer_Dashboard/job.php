@@ -3,13 +3,7 @@ include("../config.php");
 session_start();
 
 
-$cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
-$total_row = mysqli_num_rows($jobs_query);
-$page_number = ceil($total_row / 9);
-$starter = 1;
-
-function parseDate($dateString)
 {
     $dateParts = explode('/', $dateString);
     $day = $dateParts[0];
