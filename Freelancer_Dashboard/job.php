@@ -453,15 +453,16 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 for (let i = 0; i < featureList.length; i++) {
                     let params = featureList[i].split("_");
                     let paramText;
+                    console.log(params[0]+" "+params[1])
                     switch (params[0]) {
                         case "Type":
-
+                            console.log("entered type");
                             actualData = actualData.filter(item => item.job_type === params[1]);
                             console.table(actualData);
                             break;
 
                         case "Experience":
-
+                            console.log("entered exp");
                             paramText = params[1].split(" ");
                             switch (paramText[0]) {
                                 case "moins":
@@ -486,7 +487,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
                         case "Salaire":
                         case "Salary":
-
+                            console.log("entered salary")
                             paramText = params[1].split(" ");
                             switch (paramText[0]) {
                                 case "moins":
@@ -511,7 +512,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
                         case "Sous categorie":
                         case "Sub category":
-
+                            console.log("entered sub vat")
                             actualData = actualData.filter(item => item.job_sub_category === params[1]);
 
                             console.table(actualData);
