@@ -473,7 +473,7 @@ function parseDate($dateString)
                         break;
                     case "Experience":
                         if (actualData.length != 0) {
-                            var paramText = params.split(" ");
+                            var paramText = params[1].split(" ");
 
 
                             switch (paramText[0]) {
@@ -506,7 +506,7 @@ function parseDate($dateString)
                     case "Salaire" || "Salary":
 
                         if (actualData.length != 0) {
-                            var paramText = params.split(" ");
+                            var paramText = params[1].split(" ");
 
                             switch (paramText[0]) {
                                 case "moins" || "less":
