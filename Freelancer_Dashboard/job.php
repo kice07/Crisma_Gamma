@@ -449,7 +449,8 @@ function parseDate($dateString)
                 featureList.push(sectionName + "_" + featureLabel)
             }
 
-            console.log("Feature_List :"+featureList.toString)
+            console.log("Feature_List :")
+            console.table(featureList)
         }
 
         function applyFilter() {
