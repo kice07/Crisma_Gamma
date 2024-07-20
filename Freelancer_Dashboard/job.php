@@ -457,6 +457,8 @@ $cat_query =mysqli_query($conn,"SELECT * FROM job_category");
                             actualData.forEach(item => {
                                 if (item.job_type != params[1]) {
                                     actualData.splice(actualData.indexOf(item), 1);
+                                }else{
+                                    console.log(item)
                                 }
                             })
                         }
