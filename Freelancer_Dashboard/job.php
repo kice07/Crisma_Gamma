@@ -437,7 +437,7 @@ function parseDate($dateString)
         }
 
         function setFeature(element) {
-            var isChecked = checkbox.classList.contains("checked");
+            var isChecked = element.classList.contains("checked");
             var sectionName = element.parentElement.parentElement.querySelector("p").textContent;
             var featureLabel = element.nextElementSibling.textContent;
             if (isChecked) {
