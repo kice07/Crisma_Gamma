@@ -2,7 +2,7 @@
 include("../config.php");
 session_start();
 
-$cat_query =mysqli_query($conn,"SELECT * FROM job_category")
+$cat_query =mysqli_query($conn,"SELECT * FROM job_category");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -235,7 +235,7 @@ $cat_query =mysqli_query($conn,"SELECT * FROM job_category")
             })
 
             if (searchText == "") {
-                matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + <?php echo mysqli_num_rows($jobs_query) ?> + ')'
+                matchElement.innerHTML = '<strong class="translate">Résultats trouvés</strong> (' + dataList.length+ ')'
                 free.style.opacity = "1";
                 freebloc.forEach(free => {
                     // free.style.opacity = "1";
