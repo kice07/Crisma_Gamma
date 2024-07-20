@@ -2,15 +2,6 @@
 include("../config.php");
 session_start();
 
-
-
-{
-    $dateParts = explode('/', $dateString);
-    $day = $dateParts[0];
-    $month = $dateParts[1];
-    $year = $dateParts[2];
-    return DateTime::createFromFormat('d/m/Y', "$day/$month/$year");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
