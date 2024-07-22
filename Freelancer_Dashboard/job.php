@@ -560,7 +560,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 Ncounter = 1;
                 
                 displayData(dataList, Ncounter)
-                jobBloc.style.display = "block";
+               
 
                 var noneText = jobBloc.previousElementSibling.style.display = "none";
             }
