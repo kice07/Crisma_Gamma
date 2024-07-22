@@ -99,7 +99,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     <p class="translate">Type</p>
                     <div class="box">
                         <div class="check" onclick="toggleCheckbox(this);setFeature(this)"><i class='bx bx-check'></i></div>
-                        <span class="translate">temps plein</span>
+                        <span class="translate">temps partiel</span>
                     </div>
 
                     <div class="box">
