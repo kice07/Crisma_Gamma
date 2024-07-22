@@ -448,8 +448,15 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             })
         }
 
+        function scrollToSection(sectionId) {
+            let section = document.querySelector(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
         function applyFilter() {
+            
             if (featureList.length > 0) {
+                scrollToSection(".categories")
                 for (let i = 0; i < featureList.length; i++) {
                     let params = featureList[i].split("_");
                     let paramText;
@@ -538,6 +545,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         function resetFilter() {
 
             if (featureList.length > 0) {
+                var jobBloc = document.querySelector(".job_bloc");
+               jobBloc.innerHTML='';
                 var checkboxes = document.querySelectorAll(".check");
 
                 checkboxes.forEach(checkbox => {
@@ -549,7 +558,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 })
 
                 Ncounter = 1;
-                var jobBloc = document.querySelector(".job_bloc");
+                
                 displayData(dataList, Ncounter)
                 jobBloc.style.display = "block";
 
