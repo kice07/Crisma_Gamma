@@ -552,7 +552,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 checkboxes.forEach(checkbox => {
                     if (checkbox.classList.contains("checked")) {
                         checkbox.classList.remove("checked");
-                        checkbox.nextElementSibling.style.color = "#969999";
+                        checkbox.nextElementSibling.style.color = "#19202b";
                         checkbox.nextElementSibling.style.fontWeight = "normal";
                     }
                 })
