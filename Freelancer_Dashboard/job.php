@@ -541,7 +541,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${actualData.length})`;
 
                     pageNumber = Math.ceil(actualData.length / 6);
-                    document.querySelector(".pageNumber").textContent = pageNumber;
+                    document.querySelector(".pageNumber").textContent = pageNumber+1;
 
                 } else {
                     displayData(actualData, Ncounter);
