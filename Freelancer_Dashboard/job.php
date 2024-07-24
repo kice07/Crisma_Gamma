@@ -313,7 +313,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
                         displayData(dataList, Ncounter);
-                        var pageNumber = Math.ceil(dataList.length / 6);
+                        pageNumber = Math.ceil(dataList.length / 6);
                         document.querySelector(".pageNumber").textContent = pageNumber;
                         console.log(Ncounter);
                         console.log(pageNumber);
