@@ -270,7 +270,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             var current = document.querySelector(".currentPage");
          
             if (side == "back") {
-                if (Ncounter > 0) {
+                if (Ncounter > 1) {
                     Ncounter--;
                     current.textContent = parseInt(current.textContent)--;
                     displayData(actualData, Ncounter);
