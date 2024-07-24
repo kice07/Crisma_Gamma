@@ -191,7 +191,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         <span class="pageNumber"></span>
                     </div>
 
-                    <a href="#" onclick="counter(this,'forth')">
+                    <a onclick="counter(this,'forth')">
                         <span class="translate">suivant</span>
                         <i class="ai-arrow-right"></i>
                     </a>
@@ -288,6 +288,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     displayData(actualData, Ncounter);
                 }else{
                     element.style.backgroundColor ="#ffbeb0";
+                    element.style.borderColor ="#ffbeb0";
                     element.style.color="#fff";
                 }
 
