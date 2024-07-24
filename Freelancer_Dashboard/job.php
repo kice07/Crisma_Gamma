@@ -313,8 +313,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
                         displayData(dataList, Ncounter);
-                        pageNumber = Math.ceil(dataList.length / 6);
-                        document.querySelector(".pageNumber").textContent = pageNumber;
+
                         console.log(Ncounter);
                         console.log(pageNumber);
 
@@ -420,6 +419,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             var found = document.querySelector(".right .head .found");
             found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`;
 
+            pageNumber = Math.ceil(dataArray.length / 6);
+            document.querySelector(".pageNumber").textContent = pageNumber;
             scrollToSection(".categories")
         }
 
