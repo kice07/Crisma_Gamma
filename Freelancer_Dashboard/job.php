@@ -536,6 +536,13 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     let jobBloc = document.querySelector(".job_bloc");
                     jobBloc.style.display = "none";
                     jobBloc.previousElementSibling.style.display = "block";
+
+                    var found = document.querySelector(".right .head .found");
+                    found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${actualData.length})`;
+
+                    pageNumber = Math.ceil(actualData.length / 6);
+                    document.querySelector(".pageNumber").textContent = pageNumber;
+
                 } else {
                     displayData(actualData, Ncounter);
                 }
