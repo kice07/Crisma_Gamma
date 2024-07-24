@@ -182,18 +182,16 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
                 </div>
 
-                <div class="more">
-                    <i class="ai-arrow-left"></i>
+                <div class="more" style="width: 100%; left:100%">
+                    <i class="ai-arrow-left" onclick="counter(this,'back')"></i>
 
                     <div class="numbers">
-                        <span>1</span>
-                        <span>...</span>
-                        <span class="mid">2</span>
-                        <span class="mid">...</span>
+                        <span class="currentPage" style="color:fe6c4c;">1</span>
+                        <span>/</span>
                         <span class="pageNumber"></span>
                     </div>
 
-                    <a href="#">
+                    <a href="#"  onclick="counter(this,'forth')">
                         <span class="translate">suivant</span>
                         <i class="ai-arrow-right"></i>
                     </a>
@@ -268,36 +266,27 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         }
 
         //==================== counter
-        function counter(element, side) {
-
-            table = element.previousElementSiblings;
-            var mids = element.parentElement.querySelectorAll(".numbers .mid");
+        function counter(element,side) {
+            var current = document.querySelector(".currentPage");
+         
             if (side == "back") {
                 if (Ncounter > 0) {
                     Ncounter--;
-                    if (mids[0].textContent == "2") {
-                        mids.forEach(mid => {
-                            mid.classList.add("hide");
-                            displayData(actualData, Ncounter);
-                        })
-                    } else {
-                        mids[0].textContent = parseInt(mids[0].textContent) - 1;
-                        displayData(actualData, Ncounter);
-                    }
+                    current.textContent = parseInt(current.textContent)--;
+                    displayData(actualData, Ncounter);
+                }else{
+                    element.style.borderColor="#faede8";
+                    element.style.color="#faede8";
                 }
 
             } else {
-                if (Ncounter++ < pageNumber) {
+                if (Ncounter < pageNumber) {
                     Ncounter++;
-                    if (mids[0].classList.contains("hide")) {
-                        mids.forEach(mid => {
-                            mid.classList.remove("hide");
-                            displayData(actualData, Ncounter);
-                        })
-                    } else {
-                        displayData(actualData, Ncounter);
-                        mids[0].textContent = parseInt(mids[0].textContent) + 1;
-                    }
+                    current.textContent = parseInt(current.textContent)++;
+                    displayData(actualData, Ncounter);
+                }else{
+                    element.style.borderColor="#faede8";
+                    element.style.color="#fff";
                 }
 
             }
