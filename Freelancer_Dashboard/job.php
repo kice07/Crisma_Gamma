@@ -191,7 +191,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         <span class="pageNumber"></span>
                     </div>
 
-                    <a href="" onclick="counter(this,'forth')">
+                    <a onclick="counter(this,'forth')">
                         <span class="translate">suivant</span>
                         <i class="ai-arrow-right"></i>
                     </a>
@@ -279,7 +279,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     element.style.color="#ffbeb0";
                 }
 
-            } else {
+            } else if(side === "forth") {
                 if (Ncounter < pageNumber) {
                    
                     Ncounter++;
