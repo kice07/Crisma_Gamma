@@ -318,8 +318,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
                         displayData(dataList, Ncounter);
-                        var pageNumber = Math.ceil(dataList.length / 6) ;
-                        document.querySelector(".pageNumber").textContent = pageNumber;
+
 
 
                         console.table(dataList);
@@ -341,8 +340,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         function displayData(dataArray, start) {
             const jobBloc = document.querySelector(".job_bloc");
             var inner = ``;
-            var counter = (start == 1) ? 0 : ((start - 1) * 6) - 1;
-            while (counter < ((start + 1) * 6)) {
+            var counter = (start - 1) * 6;
+            while (counter < (start * 6)) {
                 if (counter == dataArray.length)
                     break;
                 inner += ` <div class="job" id="${dataArray[counter].id}" cat="${dataArray[counter].job_category}" sub="${dataArray[counter].job_sub_category}">
@@ -423,7 +422,9 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
             jobBloc.innerHTML = inner;
             var found = document.querySelector(".right .head .found");
-            found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`
+            found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`;
+            var pageNumber = Math.ceil(dataArray.length / 6);
+            document.querySelector(".pageNumber").textContent = pageNumber;
         }
 
         function setFeature(element) {
@@ -450,17 +451,19 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
         function scrollToSection(sectionId) {
             let section = document.querySelector(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
 
         function applyFilter() {
-            
+
             if (featureList.length > 0) {
                 scrollToSection(".categories")
                 for (let i = 0; i < featureList.length; i++) {
                     let params = featureList[i].split("_");
                     let paramText;
-                    console.log(params[0]+" "+params[1])
+                    console.log(params[0] + " " + params[1])
                     switch (params[0]) {
                         case "Type":
                             console.log("entered type");
@@ -546,7 +549,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
             if (featureList.length > 0) {
                 var jobBloc = document.querySelector(".job_bloc");
-               jobBloc.innerHTML='';
+                jobBloc.innerHTML = '';
                 var checkboxes = document.querySelectorAll(".check");
 
                 checkboxes.forEach(checkbox => {
@@ -558,9 +561,9 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 })
 
                 Ncounter = 1;
-                
+
                 displayData(dataList, Ncounter)
-               
+
 
                 var noneText = jobBloc.previousElementSibling.style.display = "none";
             }
