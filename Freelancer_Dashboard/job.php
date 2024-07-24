@@ -1,9 +1,4 @@
-<?php
-include("../config.php");
-session_start();
 
-$cat_query = mysqli_query($conn, "SELECT * FROM job_category");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -272,7 +267,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             if (side === "back") {
                 if (Ncounter > 1) {
                     Ncounter--;
-                    current.textContent = parseInt(current.textContent)--;
+                    current.textContent =Ncounter;
                     displayData(actualData, Ncounter);
                 }else{
                     element.style.borderColor="#ffbeb0";
@@ -283,7 +278,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 if (Ncounter < pageNumber) {
                    
                     Ncounter++;
-                    current.textContent = parseInt(current.textContent) + 1;
+                    current.textContent = Ncounter;
                     console.log(Ncounter);
                     displayData(actualData, Ncounter);
                 }else{
