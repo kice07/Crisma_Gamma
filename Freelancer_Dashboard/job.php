@@ -191,7 +191,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         <span class="pageNumber"></span>
                     </div>
 
-                    <a href="" onclick="counter(this,'forth')">
+                    <a onclick="counter(this,'forth')">
                         <span class="translate">suivant</span>
                         <i class="ai-arrow-right"></i>
                     </a>
@@ -281,9 +281,10 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
             } else {
                 if (Ncounter < pageNumber) {
-                    scrollToSection(".categories")
+                   
                     Ncounter++;
                     current.textContent = parseInt(current.textContent)++;
+                    console.log(Ncounter);
                     displayData(actualData, Ncounter);
                 }else{
                     element.style.borderColor="#faede8";
@@ -308,10 +309,9 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         dataList = JSON.parse(data);
                         actualData = JSON.parse(data);
                         displayData(dataList, Ncounter);
+                        var pageNumber = Math.ceil(dataArray.length / 6);
+                        document.querySelector(".pageNumber").textContent = pageNumber;
 
-
-
-                        console.table(dataList);
                     }
                 }
             }
@@ -413,8 +413,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             jobBloc.innerHTML = inner;
             var found = document.querySelector(".right .head .found");
             found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`;
-            var pageNumber = Math.ceil(dataArray.length / 6);
-            document.querySelector(".pageNumber").textContent = pageNumber;
+        
+            scrollToSection(".categories")
         }
 
         function setFeature(element) {
