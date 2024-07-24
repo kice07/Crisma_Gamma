@@ -186,7 +186,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     <i class="ai-arrow-left" onclick="counter(this,'back')"></i>
 
                     <div class="numbers">
-                        <span class="currentPage" style="color:#fe6c4c;">1</span>
+                        <span class="currentPage" style="color: #fe6c4c;">1</span>
                         <span>/</span>
                         <span class="pageNumber"></span>
                     </div>
