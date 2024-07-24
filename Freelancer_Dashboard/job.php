@@ -266,33 +266,33 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         }
 
         //==================== counter
-        function counter(element,side) {
+        function counter(element, side) {
             var current = document.querySelector(".currentPage");
-         
+            pageNumber = Math.ceil(dataList.length / 6);
             if (side === "back") {
                 if (Ncounter > 1) {
                     Ncounter--;
-                    current.textContent =Ncounter;
+                    current.textContent = Ncounter;
                     displayData(actualData, Ncounter);
-                }else{
-                    element.style.borderColor="#ffbeb0";
-                    element.style.color="#ffbeb0";
+                } else {
+                    element.style.borderColor = "#ffbeb0";
+                    element.style.color = "#ffbeb0";
                 }
 
-            } else if(side === "forth") {
+            } else if (side === "forth") {
                 if (Ncounter < pageNumber) {
                     console.log("click");
                     Ncounter++;
                     current.textContent = Ncounter;
                     console.log(Ncounter);
                     displayData(actualData, Ncounter);
-                }else{
+                } else {
                     console.log("unclick");
                     console.log(Ncounter);
                     console.log(pageNumber);
-                    element.style.backgroundColor ="#ffbeb0";
-                    element.style.borderColor ="#ffbeb0";
-                    element.style.color="#fff";
+                    element.style.backgroundColor = "#ffbeb0";
+                    element.style.borderColor = "#ffbeb0";
+                    element.style.color = "#fff";
                 }
 
             }
@@ -419,7 +419,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
             jobBloc.innerHTML = inner;
             var found = document.querySelector(".right .head .found");
             found.innerHTML = ` <strong class="translate">Résultats trouvés</strong> (${dataArray.length})`;
-        
+
             scrollToSection(".categories")
         }
 
