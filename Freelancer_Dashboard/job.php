@@ -269,7 +269,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
         function counter(element,side) {
             var current = document.querySelector(".currentPage");
          
-            if (side == "back") {
+            if (side === "back") {
                 if (Ncounter > 1) {
                     Ncounter--;
                     current.textContent = parseInt(current.textContent)--;
@@ -283,7 +283,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                 if (Ncounter < pageNumber) {
                    
                     Ncounter++;
-                    current.textContent = parseInt(current.textContent)++;
+                    current.textContent = parseInt(current.textContent) + 1;
                     console.log(Ncounter);
                     displayData(actualData, Ncounter);
                 }else{
