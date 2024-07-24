@@ -288,6 +288,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     displayData(actualData, Ncounter);
                 }else{
                     console.log("unclick");
+                    console.log(Ncounter);
+                    console.log(pageNumber);
                     element.style.backgroundColor ="#ffbeb0";
                     element.style.borderColor ="#ffbeb0";
                     element.style.color="#fff";
