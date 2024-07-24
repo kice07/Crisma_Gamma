@@ -275,8 +275,8 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     current.textContent = parseInt(current.textContent)--;
                     displayData(actualData, Ncounter);
                 }else{
-                    element.style.borderColor="#faede8";
-                    element.style.color="#faede8";
+                    element.style.borderColor="#ffbeb0";
+                    element.style.color="#ffbeb0";
                 }
 
             } else {
@@ -287,7 +287,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                     console.log(Ncounter);
                     displayData(actualData, Ncounter);
                 }else{
-                    element.style.borderColor="#faede8";
+                    element.style.backgroundColor ="#ffbeb0";
                     element.style.color="#fff";
                 }
 
