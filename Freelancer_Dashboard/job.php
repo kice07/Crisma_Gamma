@@ -1,4 +1,9 @@
+<?php
+include("../config.php");
+session_start();
 
+$cat_query = mysqli_query($conn, "SELECT * FROM job_category");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
