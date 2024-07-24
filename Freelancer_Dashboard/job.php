@@ -312,6 +312,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         displayData(dataList, Ncounter);
                         var pageNumber = Math.ceil(dataList.length / 6);
                         document.querySelector(".pageNumber").textContent = pageNumber;
+                        console.log(Ncounter);
 
                     }
                 }
