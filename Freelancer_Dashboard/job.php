@@ -281,12 +281,13 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
             } else if(side === "forth") {
                 if (Ncounter < pageNumber) {
-                   
+                    console.log("click");
                     Ncounter++;
                     current.textContent = Ncounter;
                     console.log(Ncounter);
                     displayData(actualData, Ncounter);
                 }else{
+                    console.log("unclick");
                     element.style.backgroundColor ="#ffbeb0";
                     element.style.borderColor ="#ffbeb0";
                     element.style.color="#fff";
