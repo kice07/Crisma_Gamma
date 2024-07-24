@@ -191,7 +191,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
                         <span class="pageNumber"></span>
                     </div>
 
-                    <a onclick="counter(this,'forth')">
+                    <a href="#" onclick="counter(this,'forth')">
                         <span class="translate">suivant</span>
                         <i class="ai-arrow-right"></i>
                     </a>
