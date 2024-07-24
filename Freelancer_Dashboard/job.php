@@ -182,7 +182,7 @@ $cat_query = mysqli_query($conn, "SELECT * FROM job_category");
 
                 </div>
 
-                <div class="more" style="width: 100%; left:100%">
+                <div class="more" style="width: 100%; left:0%">
                     <i class="ai-arrow-left" onclick="counter(this,'back')"></i>
 
                     <div class="numbers">
