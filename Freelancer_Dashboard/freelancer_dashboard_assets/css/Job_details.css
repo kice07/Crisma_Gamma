@@ -435,7 +435,7 @@ body {
     display: none;
     z-index: 4;
     position: absolute;
-    top: 35%;
+    top: 20%;
     left: 30%;
     height: 40%;
     width: 40%;
@@ -476,7 +476,12 @@ body {
 }
 
 .cv_popup .mid ul li{
+    padding: 1%;
     margin-bottom: 3%;
+}
+.cv_popup .mid ul li:hover{
+    cursor: pointer;
+   background-color: var(--third-grey);
 }
 .cv_popup .mid ul li:last-child{
    margin-bottom: 0%;
