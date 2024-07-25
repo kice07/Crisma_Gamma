@@ -466,7 +466,7 @@ body {
 }
 
 .cv_popup .mid{
-    padding: 1% 5%;
+    padding: 1%;
     background-color: rgb(248, 248, 248);
     border-left:1px solid var(--main-grey) ;
     border-right:1px solid var(--main-grey) ;
@@ -476,8 +476,9 @@ body {
 }
 
 .cv_popup .mid ul li{
-    padding: 1%;
-    margin-bottom: 3%;
+    padding: 1% 3%;
+    margin-bottom: 2%;
+    transition: all .3s ease-in-out;
 }
 .cv_popup .mid ul li:hover{
     cursor: pointer;
