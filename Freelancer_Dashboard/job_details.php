@@ -125,7 +125,7 @@ function parseDate($dateString)
                 </div>
                 <div class="bloc">
                     <p class="translate apply" onclick="openPopup()">Postuler</p>
-                    <i class="ai-ribbon" $id="<?php echo $id ?>" onclick="secondAddWhishlist(this)"></i>
+                    <i class="ai-ribbon" id="<?php echo $id ?>" onclick="secondAddWhishlist(this)"></i>
                     <i class='bx bxs-bookmark'></i>
                 </div>
             </div>
