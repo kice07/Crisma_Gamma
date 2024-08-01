@@ -504,7 +504,7 @@ body {
     right: 2%;
     background-color: var(--main-orange);
     color: white;
-
+    cursor: pointer;
     font-weight: bold;
     /* font-family: "Prompt"; */
     border-radius: 5px;
