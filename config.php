@@ -19,7 +19,7 @@ $dbPassword = $_ENV['DB_PASSWORD'];
 $conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbDatabase);
 
 if (!$conn) {
-    die("Connection failed: ");
+    die("Connection failed: ".mysqli_connect_error());
 }
 echo "Connected successfully";
 
