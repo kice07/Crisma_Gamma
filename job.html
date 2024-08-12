@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>WebSocket Chat</title>
@@ -29,5 +29,34 @@
             input.value = '';
         }
     </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Chat</title>
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const socket = io('http://localhost:3000'); // Replace with your server URL
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+            });
+
+            socket.on('message', (msg) => {
+                console.log('Message received: ' + msg);
+            });
+
+            // Example of sending a message
+            socket.emit('message', 'Hello, World!');
+        });
+    </script>
+</head>
+<body>
+    <h1>Socket.io Chat</h1>
 </body>
 </html>
