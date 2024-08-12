@@ -47,6 +47,8 @@
 import express from 'express';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import cors from 'cors'; // Importer le module CORS
 
 const app = express();
@@ -70,10 +72,11 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'job.html'));
+});
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
