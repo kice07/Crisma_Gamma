@@ -1,4 +1,7 @@
 {
+  "name": "crismawork",
+  "version": "0.0.1",
+  "description": "my crisma app",
   "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
