@@ -1,12 +1,13 @@
 import express from 'express';
 import http from 'http';
-import socketIo from 'socket.io';
+
+import { Server as SocketIOServer } from 'socket.io';
 // import fs from 'fs';
 import path from 'path';
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = new SocketIOServer(server);
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'index.html')));
