@@ -45,12 +45,23 @@
 
 
 import express from 'express';
-import http from 'http';
-import { Server as SocketIOServer } from 'socket.io';
+import { createServer } from 'node:http';
+import { Server } from 'socket.io';
+import cors from 'cors'; // Importer le module CORS
 
 const app = express();
-const server = http.createServer(app);
-const io = new SocketIOServer(server);
+const server = createServer(app);
+
+// Configurer CORS
+app.use(cors({
+  origin: '*', // Permet les connexions de tous les domaines
+}));
+
+const io = new Server(server, {
+  cors: {
+    origin: '*', // Permet les connexions de tous les domaines
+  }
+});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
