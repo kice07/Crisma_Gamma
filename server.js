@@ -72,10 +72,11 @@ io.on('connection', (socket) => {
   });
 });
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'job.html'));
+    res.send('Hello World!');
+//   res.sendFile(join(__dirname, 'job.html'));
 });
 server.listen(3000, () => {
   console.log('listening on *:3000');
