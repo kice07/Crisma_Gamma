@@ -36,6 +36,8 @@
 
 import express from 'express';
 import http from 'http';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { Server } from 'socket.io';
 
 // Créer une application Express
@@ -63,6 +65,12 @@ io.on('connection', (socket) => {
   // Vous pouvez ajouter d'autres gestionnaires d'événements ici
 });
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.get('/', (req, res) => {
+    // res.send('Hello World!');
+    res.sendFile(join(__dirname, 'job.html'));
+});
 // Démarrer le serveur HTTP
 const PORT = 3000;
 httpServer.listen(PORT, () => {
