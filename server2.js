@@ -49,7 +49,7 @@ const httpServer = http.createServer(app);
 // Configurer Socket.IO avec CORS
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://www.crismawork.com:3000", // Origine autorisée
+    origin: "https://www.crismawork.com", // Origine autorisée
     methods: ["GET", "POST"],         // Méthodes HTTP autorisées
   }
 });
