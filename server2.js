@@ -49,7 +49,7 @@ const httpServer = http.createServer(app);
 // Configurer Socket.IO avec CORS
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://localhost:3000", // Origine autorisée
+    origin: "https://82.112.250.144:3000", // Origine autorisée
     methods: ["GET", "POST"],         // Méthodes HTTP autorisées
   }
 });
