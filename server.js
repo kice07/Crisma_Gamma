@@ -56,12 +56,12 @@ const server = createServer(app);
 
 // Configurer CORS
 app.use(cors({
-    origin: '*', // Permet les connexions de tous les domaines
+    origin: 'http://localhost:3000', // Permet les connexions de tous les domaines
 }));
 
 const io = new Server(server, {
     cors: {
-        origin: '*', // Permet les connexions de tous les domaines
+        origin: 'http://localhost:3000', // Permet les connexions de tous les domaines
     }
 });
 
