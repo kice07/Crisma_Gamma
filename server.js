@@ -15,11 +15,11 @@
 // // Handle WebSocket connections
 // io.on('connection', (socket) => {
 //     console.log('New client connected');
-    
+
 //     socket.on('disconnect', () => {
 //         console.log('Client disconnected');
 //     });
-    
+
 //     socket.on('message', (msg) => {
 //         console.log('Message received: ' + msg);
 //         io.emit('message', msg); // Broadcast message to all clients
@@ -56,28 +56,28 @@ const server = createServer(app);
 
 // Configurer CORS
 app.use(cors({
-  origin: '*', // Permet les connexions de tous les domaines
+    origin: '*', // Permet les connexions de tous les domaines
 }));
 
 const io = new Server(server, {
-  cors: {
-    origin: '*', // Permet les connexions de tous les domaines
-  }
+    cors: {
+        origin: '*', // Permet les connexions de tous les domaines
+    }
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
 
-// const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
-//   res.sendFile(join(__dirname, 'job.html'));
+    // res.send('Hello World!');
+    res.sendFile(join(__dirname, 'job.html'));
 });
 server.listen(3000, () => {
-  console.log('listening on *:3000');
+    console.log('listening on *:3000');
 });
