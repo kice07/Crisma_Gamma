@@ -95,7 +95,7 @@ app.get('/', (req, res) => {
 });
 
 // Démarrer le serveur HTTPS
-const PORT = 443; // Port HTTPS standard
+const PORT = 3000; // Port HTTPS standard
 httpsServer.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
