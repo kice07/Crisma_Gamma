@@ -74,10 +74,10 @@ io.on('connection', (socket) => {
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-app.get('/', (req, res) => {
-    // res.send('Hello World!');
-    res.sendFile(join(__dirname, 'job.html'));
-});
+// app.get('/', (req, res) => {
+//     // res.send('Hello World!');
+//     res.sendFile(join(__dirname, 'job.html'));
+// });
 // Démarrer le serveur HTTP
 const PORT = 3000;
 httpServer.listen(PORT,'0.0.0.0', () => {
