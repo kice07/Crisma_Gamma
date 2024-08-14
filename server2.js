@@ -90,9 +90,9 @@ io.on('connection', (socket) => {
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// app.get('/', (req, res) => {
-//     res.sendFile(join(__dirname, 'job.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(join(__dirname, 'index.html'));
+});
 
 // Démarrer le serveur HTTPS
 const PORT = 3000; // Port HTTPS standard
