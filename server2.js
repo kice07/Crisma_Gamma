@@ -62,6 +62,10 @@ io.on('connection', (socket) => {
     console.log('user disconnected');
   });
 
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+
   // Vous pouvez ajouter d'autres gestionnaires d'événements ici
 });
 
