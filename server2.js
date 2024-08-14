@@ -57,9 +57,10 @@ const app = express();
 // Chemins vers vos fichiers de certificat SSL
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/crismawork.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/crismawork.com/fullchain.pem', 'utf8');
-const ca = fs.readFileSync('/etc/apache2/ssl.crt/ca-bundle.crt', 'utf8');
+// const ca = fs.readFileSync('/etc/apache2/ssl.crt/ca-bundle.crt', 'utf8');
 
 const credentials = { key: privateKey, cert: certificate, ca: ca };
+// const credentials = { key: privateKey, cert: certificate, ca: ca };
 
 // Créer un serveur HTTPS en utilisant l'application Express
 const httpsServer = https.createServer(credentials, app);
