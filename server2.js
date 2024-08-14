@@ -39,17 +39,20 @@ import http from 'http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { Server } from 'socket.io';
-
+import fs from 'fs';
 // Créer une application Express
 const app = express();
 
 // Créer un serveur HTTP en utilisant l'application Express
 const httpServer = http.createServer(app);
 
+  
+
 // Configurer Socket.IO avec CORS
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://82.112.250.144:3000", // Origine autorisée
+    // origin: "http://82.112.250.144:3000", // Origine autorisée
+    origin: "https://crismawork.com",
     methods: ["GET", "POST"],         // Méthodes HTTP autorisées
   }
 });
@@ -73,10 +76,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', (req, res) => {
     // res.send('Hello World!');
-    res.sendFile(join(__dirname, 'job.html'));
+    res.sendFile(join(__dirname, 'index.html'));
 });
 // Démarrer le serveur HTTP
 const PORT = 3000;
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT,'0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });

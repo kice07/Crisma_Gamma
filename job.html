@@ -95,6 +95,7 @@
             background: #efefef;
         }
     </style>
+    <script src="https://crismawork.com/socket.io/socket.io.js"></script>
 </head>
 
 <body>
@@ -105,16 +106,16 @@
         <input id="input" autocomplete="off" /><button>Send</button>
     </form>
 
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+    <!-- <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
         integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
 
     <script>
         var form = document.getElementById("form");
         var messages = document.getElementById("messages")
         document.addEventListener('DOMContentLoaded', function () {
-            const socket = io('http://82.112.250.144:3000'); // Replace with your server URL
+            const socket = io('https://crismawork.com'); // Replace with your server URL
 
             socket.on('connect', () => {
                 console.log('Connected to server2');
