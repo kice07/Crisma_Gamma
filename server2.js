@@ -1,59 +1,74 @@
+
 // import express from 'express';
-// import { createServer } from 'http';
+// import http from 'http';
+// import { fileURLToPath } from 'node:url';
+// import { dirname, join } from 'node:path';
 // import { Server } from 'socket.io';
-// import cors from 'cors';
+// import fs from 'fs';
 
 // const app = express();
-// const server = createServer(app);
 
-// // Configurer CORS pour Express
-// app.use(cors({
-//   origin: '*', // Permet toutes les origines
-// }));
+// const httpServer = http.createServer(app);
 
-// // Configurer Socket.IO
-// const io = new Server(server, {
+  
+// const io = new Server(httpServer, {
 //   cors: {
-//     origin: '*', // Permet toutes les origines
+//     origin: "https://crismawork.com",
+//     methods: ["GET", "POST"],         
 //   }
 // });
 
+// // Événement de connexion de Socket.IO
 // io.on('connection', (socket) => {
 //   console.log('a user connected');
+
 //   socket.on('disconnect', () => {
 //     console.log('user disconnected');
 //   });
+
+//   socket.on('chat message', (msg) => {
+//     io.emit('chat message', msg);
+//   });
+
 // });
+
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // app.get('/', (req, res) => {
-//   res.send('Hello World!');
+//     // res.send('Hello World!');
+//     res.sendFile(join(__dirname, 'job.html'));
 // });
 
-// server.listen(3000, () => {
-//   console.log('listening on *:3000');
+// const PORT = 3000;
+// httpServer.listen(PORT,'0.0.0.0', () => {
+//   console.log(`Server listening on port ${PORT}`);
 // });
-
 
 import express from 'express';
-import http from 'http';
+import https from 'https';
+import fs from 'fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { Server } from 'socket.io';
-import fs from 'fs';
+
 // Créer une application Express
 const app = express();
 
-// Créer un serveur HTTP en utilisant l'application Express
-const httpServer = http.createServer(app);
+// Chemins vers vos fichiers de certificat SSL
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/crismawork.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/crismawork.com/fullchain.pem', 'utf8');
+const ca = fs.readFileSync('/etc/apache2/ssl.crt/ca-bundle.crt', 'utf8');
 
-  
+const credentials = { key: privateKey, cert: certificate, ca: ca };
+
+// Créer un serveur HTTPS en utilisant l'application Express
+const httpsServer = https.createServer(credentials, app);
 
 // Configurer Socket.IO avec CORS
-const io = new Server(httpServer, {
+const io = new Server(httpsServer, {
   cors: {
-    // origin: "http://82.112.250.144:3000", // Origine autorisée
     origin: "https://crismawork.com",
-    methods: ["GET", "POST"],         // Méthodes HTTP autorisées
+    methods: ["GET", "POST"],
   }
 });
 
@@ -75,11 +90,11 @@ io.on('connection', (socket) => {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', (req, res) => {
-    // res.send('Hello World!');
     res.sendFile(join(__dirname, 'job.html'));
 });
-// Démarrer le serveur HTTP
-const PORT = 3000;
-httpServer.listen(PORT,'0.0.0.0', () => {
+
+// Démarrer le serveur HTTPS
+const PORT = 443; // Port HTTPS standard
+httpsServer.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
