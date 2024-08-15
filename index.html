@@ -27,8 +27,8 @@
                         <a href="freelancer.php">
                             <li class="translate">Tutoriel</li>
                         </a>
-                        <!--offer_list.php  -->
-                        <a href="job.html">
+
+                        <a href="offer_list.php">
                             <li class="translate">Offres disponibles</li>
                         </a>
                         <a href="applicants.php">
@@ -499,10 +499,22 @@
         // var form = document.getElementById("form");
         // var messages = document.getElementById("messages")
         document.addEventListener('DOMContentLoaded', function () {
+            // Fonction pour récupérer un cookie par son nom
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            const token = getCookie('authToken');
             const socket = io('https://crismawork.com:3000', {
                 auth: {
-                    token: 'crisma_token' // Remplacez par votre méthode d'authentification
-                }
+                    token: token
+                },
+                transports: ['websocket'], // Assurez-vous d'utiliser le transport WebSocket pour des connexions plus persistantes
+                // reconnection: true, // Activer la reconnexion automatique
+                // reconnectionAttempts: Infinity, // Tenter de se reconnecter indéfiniment
+                reconnectionDelay: 1000, // Délai entre les tentatives de reconnexion
+                reconnectionDelayMax: 5000 // Délai maximal entre les tentatives de reconnexion
             });
 
             socket.on('connect', () => {
