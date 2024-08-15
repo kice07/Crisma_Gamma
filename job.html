@@ -115,7 +115,12 @@
         var form = document.getElementById("form");
         var messages = document.getElementById("messages")
         document.addEventListener('DOMContentLoaded', function () {
-            const socket = io('https://crismawork.com:3000'); // Replace with your server URL
+            const socket = io('https://crismawork.com:3000', {
+                auth: {
+                    token: 'crisma_token' // Remplacez par votre méthode d'authentification
+                }
+            });
+
 
             socket.on('connect', () => {
                 console.log('Connected to server2');

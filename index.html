@@ -33,7 +33,7 @@
                         <a href="applicants.php">
                             <li class="translate">Derriere Crismawork</li>
                         </a>
-                      
+
                     </ul>
                 </div>
 
@@ -87,11 +87,11 @@
 
     <!-- PARTNER -->
     <div class="partner">
-        <i class='bx bxl-meta' ></i>
+        <i class='bx bxl-meta'></i>
         <i class="ai-instagram-fill"></i>
         <i class="ai-linkedin-fill"></i>
-       <i class="ai-x-fill"></i>
-       <i class='bx bxl-spotify' ></i>
+        <i class="ai-x-fill"></i>
+        <i class='bx bxl-spotify'></i>
     </div>
 
     <!-- SERVICES -->
@@ -440,12 +440,24 @@
             <div class="col">
                 <p class="title">Categorie</p>
                 <ul>
-                    <a href=""><li>Graphics & Design</li></a>
-                    <a href=""><li>Digital Marketing</li></a>
-                    <a href=""><li>Digital Marketing</li></a>
-                    <a href=""><li>Writing & Translation</li></a>
-                    <a href=""><li>Programming & Tech</li></a>
-                    <a href=""><li>Business</li></a>
+                    <a href="">
+                        <li>Graphics & Design</li>
+                    </a>
+                    <a href="">
+                        <li>Digital Marketing</li>
+                    </a>
+                    <a href="">
+                        <li>Digital Marketing</li>
+                    </a>
+                    <a href="">
+                        <li>Writing & Translation</li>
+                    </a>
+                    <a href="">
+                        <li>Programming & Tech</li>
+                    </a>
+                    <a href="">
+                        <li>Business</li>
+                    </a>
                 </ul>
             </div>
 
@@ -455,7 +467,7 @@
                     <i class='bx bxs-phone'></i>
                     <span>+1 (506) 278 563</span>
                 </p>
-                <p >
+                <p>
                     <i class='bx bxs-envelope'></i>
                     <span>ivanehouamn5@gmail.com</span>
                 </p>
@@ -478,37 +490,41 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="main_assets/js/main.js"></script>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
-    integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
-    crossorigin="anonymous"></script>
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous"></script>
 
 
-<script>
-    // var form = document.getElementById("form");
-    // var messages = document.getElementById("messages")
-    document.addEventListener('DOMContentLoaded', function () {
-        const socket = io('https://crismawork.com:3000'); // Replace with your server URL
+    <script>
+        // var form = document.getElementById("form");
+        // var messages = document.getElementById("messages")
+        document.addEventListener('DOMContentLoaded', function () {
+            const socket = io('https://crismawork.com:3000', {
+                auth: {
+                    token: 'crisma_token' // Remplacez par votre méthode d'authentification
+                }
+            });
 
-        socket.on('connect', () => {
-            console.log('Connected to server2');
+            socket.on('connect', () => {
+                console.log('Connected to server2');
+            });
+
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     if (input.value) {
+            //         socket.emit('chat message', input.value);
+            //         input.value = '';
+            //     }
+            // });
+
+            socket.on('chat message', (msg) => {
+                const item = document.createElement('li');
+                item.textContent = msg;
+                messages.appendChild(item);
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+            // Example of sending a message
         });
-
-        // form.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-        //     if (input.value) {
-        //         socket.emit('chat message', input.value);
-        //         input.value = '';
-        //     }
-        // });
-
-        socket.on('chat message', (msg) => {
-            const item = document.createElement('li');
-            item.textContent = msg;
-            messages.appendChild(item);
-            window.scrollTo(0, document.body.scrollHeight);
-        });
-        // Example of sending a message
-    });
-</script>
+    </script>
 </body>
 
 </html>

@@ -73,6 +73,17 @@ const io = new Server(httpsServer, {
   }
 });
 
+
+io.use((socket, next) => {
+    const token = socket.handshake.auth.token;
+    // Validez le token ici
+    if (token === 'crisma_token') { // Remplacez cette logique par la validation réelle
+      next();
+    } else {
+      next(new Error('Authentication error'));
+    }
+  });
+
 // Événement de connexion de Socket.IO
 io.on('connection', (socket) => {
   console.log('a user connected');
