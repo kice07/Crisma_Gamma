@@ -2,6 +2,9 @@
 
 include("../config.php");
 session_start();
+$id = $_SESSION['unique_freelancer_id'];
+$thumbnail_query = mysqli_query($conn, "SELECT image FROM freelancer WHERE id=$id");
+$thumbnail = mysqli_fetch_assoc($thumbnail_query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,16 +12,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="freelancer_dashboard_assets/css/full_chat.css">
+    <link rel="stylesheet" href="freelancer_dashboard_assets/css/final_vers_chat_free.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
+    <link rel="stylesheet" href="../main_assets/css/video_call_both_UI.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>CrismaWork | Dashboard | Freelancer | Chat</title>
 
@@ -40,7 +43,9 @@ session_start();
 
         <!-- Le chat est fait du point de vu de l'utilisateur connecté
         dùou ses messqges sont des outgoing et ceux de celui aui lui ecrit, des incoming -->
-        <div class="chat_bloc">
+        <div class="chat_bloc"
+            myId="<?php echo $id ?>"
+            myPic="<?php echo $thumbnail['image'] ?>">
             <div class="left">
                 <!-- choisir entre les discussions et le journal d'appel -->
                 <div class="chat_side">
@@ -66,64 +71,29 @@ session_start();
 
                     <!-- Liste des users -->
                     <ul>
-                        <li>
-                            <!-- profile pic -->
-                            <img src="freelancer_dashboard_assets/images/Ely.jpg" alt="">
-                            <div class="info">
-                                <!-- name and last message hour -->
-                                <div class="up">
-                                    <p>Ehouman Ivan</p>
-                                    <span class="translate">10:53 am</span>
-                                </div>
-                                <!-- last message and new messages number -->
-                                <div class="bottom">
-                                    <span>Wow that looks amazing</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </li>
 
-                        <li>
-                            <!-- profile pic -->
-                            <img src="freelancer_dashboard_assets/images/Ely.jpg" alt="">
-                            <div class="info">
-                                <!-- name and last message hour -->
-                                <div class="up">
-                                    <p>Ehouman Ivan</p>
-                                    <span class="translate">10:53 am</span>
-                                </div>
-                                <!-- last message and new messages number -->
-                                <div class="bottom">
-                                    <span>Wow that looks amazing</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </li>
+                    </ul>
+                </div>
 
-                        <li>
-                            <!-- profile pic -->
-                            <img src="freelancer_dashboard_assets/images/Ely.jpg" alt="">
-                            <div class="info">
-                                <!-- name and last message hour -->
-                                <div class="up">
-                                    <p>Ehouman Ivan</p>
-                                    <span class="translate">10:53 am</span>
-                                </div>
-                                <!-- last message and new messages number -->
-                                <div class="bottom">
-                                    <span>Wow that looks amazing</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </li>
-
-
+                 <!-- call logs preview -->
+                <div class="calls_logs_preview">
+                    <div class="search_bar">
+                        <input type="text" placeholder="Chercher">
+                        <i class="ai-search"></i>
+                    </div>
+                    <ul>
 
                     </ul>
                 </div>
             </div>
 
             <div class="right">
+                <div class="no_content">
+                    <p>Choisissez une conversation</p>
+                </div>
+
+                <div class="call_log_detail">
+                </div>
                 <!-- actual chat details -->
                 <div class="up">
                     <!-- person profile -->
@@ -175,119 +145,6 @@ session_start();
 
 
                         </div>
-
-
-
-
-                        <!-- day divider -->
-                        <div class="divider">
-                            <div class="line"></div>
-                            <p>May 3 , 2024</p>
-                            <div class="line"></div>
-                        </div>
-
-                        <div class="msg_text incoming">
-                            <p>Message entrant </p>
-                            <div class="details">
-                                <span>15:53 am</span>
-                                <i class="ai-double-check"></i>
-                            </div>
-                        </div>
-                        <div class="msg_text outgoing">
-                            <p>Message entrant</p>
-                            <div class="details">
-                                <span>15:53 am</span>
-                                <i class="ai-double-check"></i>
-                            </div>
-                        </div>
-
-
-
-                        <div class="msg_file incoming">
-                            <div class="double_layer">
-                                <div class="up">
-                                    <img src="freelancer_dashboard_assets/images/other/rar.png" alt="">
-                                    <div class="file_info">
-                                        <p>prototype de methodes</p>
-                                        <span>51 ko, Document PDF</span>
-                                    </div>
-                                </div>
-                                <div class="action">
-                                    <button class="translate">Ouvrir</button>
-                                    <button class="translate">Enregistrer sous</button>
-                                </div>
-                            </div>
-                            <div class="down">
-                                <p>Message entrant</p>
-                                <div class="details">
-                                    <span>15:53 am</span>
-                                    <i class="ai-double-check"></i>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="msg_file outgoing">
-                            <div class="double_layer">
-                                <div class="up">
-                                    <img src="freelancer_dashboard_assets/images/other/rar.png" alt="">
-                                    <div class="file_info">
-                                        <p>prototype de methodes</p>
-                                        <span>51 ko, Document PDF</span>
-                                    </div>
-                                </div>
-                                <div class="action">
-                                    <button class="translate">Ouvrir</button>
-                                    <button class="translate">Enregistrer sous</button>
-                                </div>
-                            </div>
-                            <div class="down">
-                                <p>Message entrant</p>
-                                <div class="details">
-                                    <span>15:53 am</span>
-                                    <i class="ai-double-check"></i>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="msg_contract incoming">
-                            <div class="double_layer">
-                                <div class="up">
-                                    <img src="freelancer_dashboard_assets/images/other/briefcase.png" alt="">
-                                    <div class="file_info">
-                                        <p>Contract #CTC120624WD</p>
-                                        <span class="translate">offre d'emploi</span>
-                                    </div>
-                                </div>
-                                <div class="action">
-                                    <button>Ouvrir</button>
-                                    <button>Enregistrer sous</button>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span>15:53 am</span>
-                                <i class="ai-double-check"></i>
-                            </div>
-                        </div>
-
-                        <div class="msg_contract accepted incoming">
-                            <div class="double_layer">
-
-                                <img src="freelancer_dashboard_assets/images/other/briefcase.png" alt="">
-                                <div class="file_info">
-                                    <p>Contract #CTC120624WD</p>
-                                    <span>Accepté le 4 Mai 2024</span>
-                                </div>
-
-                            </div>
-                            <div class="details">
-                                <span>15:53 am</span>
-                                <i class="ai-double-check"></i>
-                            </div>
-                        </div>
-
 
                         <!-- goDown button -->
                         <button class="goDown"><i class="ai-arrow-down"></i></button>
@@ -343,7 +200,11 @@ session_start();
             </div>
         </div>
 
+         <!-- video_call_interface -->
+      
     </div>
+
+
 
 
 
@@ -351,6 +212,11 @@ session_start();
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="freelancer_dashboard_assets/js/full_chat.js"></script>
     <script src="freelancer_dashboard_assets/js/translate.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous"></script>
+    <script src='../main_assets/js/agora-rtm-sdk-1.4.4.js'></script>
+    <script src="freelancer_dashboard_assets/js/chat_video_manage_freelancer.js"></script>
 
 </body>
 

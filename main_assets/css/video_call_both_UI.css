@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --main-orange: #fe6c4c;
+    --second-orange: #faede8;
+    --third-orange: #ffe1d5;
+    --main-blue: #19202b;
+    --light-blue: #e4f4ff;
+    --main-grey: #969999;
+    --second-grey: #d3d8d8;
+    --third-grey: #eff0f2;
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --main: #f3d3c0;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: rgb(54, 57, 73);
+    --light-dark: rgba(54, 57, 73, 0.5);
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --primary-clr: #b38add;
+
+}
+
+
+.video_call_box {
+    position: absolute;
+    top: 0;
+    margin-top: 1%;
+    justify-content: center;
+    /* border: 1px solid var(--main-grey); */
+    box-shadow: 0px 0px 5px 1px var(--second-grey);
+    /* margin: 1% auto; */
+    width: 100%;
+    height: 770px;
+    z-index: 200;
+    background-color: var(--main-blue);
+    padding: 0 1%;
+
+}
+.video_call_box.visible{
+    display: block;
+}
+
+.video_call_box .text {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 35%;
+    align-items: center;
+
+}
+
+.video_call_box .text p {
+    font-size: .95em;
+    color: white;
+}
+
+.video_call_box .text .logo {
+    display: flex;
+    align-items: center;
+}
+
+.video_call_box .text img {
+    height: 30px;
+    width: 50%;
+}
+
+.video_call_box .text .options {
+    display: flex;
+    gap: 5%;
+    width: 8%;
+}
+
+.video_call_box .text .options i {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    color: white;
+    padding: 10% 8%;
+
+}
+
+.video_call_box .text .options i:hover {
+    color: var(--main-blue);
+    background-color: white;
+}
+
+.video_call_box .text .options i:last-child:hover {
+    color: white;
+    background-color: var(--danger);
+}
+
+.video_call_box .video_box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    margin-bottom: .5%;
+
+}
+
+.video_call_box .video_box .box {
+    position: relative;
+    padding-top: 5%;
+    border-radius: 6px;
+    height: 41.5em;
+    width: 100%;
+}
+
+.video_call_box .box i {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: red;
+    z-index: 11;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    font-size: 1.2em;
+    border-radius: 50%;
+    padding: 1%;
+    background-color: #293343;
+
+}
+
+.video_call_box .video_box .box:last-child {
+    display: none;
+}
+
+.video_call_box .video_box .box:last-child.show {
+    display: none;
+}
+
+.video_call_box .video {
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.video_call_box .video_box p {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+.video_call_box .video_box img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.video_call_box .bottom {
+    width: 100%;
+    display: flex;
+    gap: 1%;
+    align-items: center;
+}
+
+.video_call_box .timer {
+    width: 2%;
+    font-size: 1.05em;
+    color: white
+}
+
+.video_call_box .actions {
+    /* background-color: red; */
+    width: 98%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    margin: 1% auto;
+    margin-top: 0.5%;
+    margin-bottom: 0;
+    justify-content: center;
+
+}
+
+.video_call_box .actions button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    padding: .7%;
+    display: flex;
+
+    justify-content: center;
+    gap: 1.5%;
+    background-color: var(--third-grey);
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+}
+
+.video_call_box .actions button:hover {
+    background-color: var(--second-grey);
+    background-color: #3f4b63e5;
+}
+
+.video_call_box .actions button:hover i {
+    color: white;
+}
+
+.video_call_box .actions button i {
+    font-size: 1.2em;
+    color: var(--main-blue);
+
+}
+
+.video_call_box .actions button #sub {
+    display: none;
+}
+
+/* toggled */
+.video_call_box .actions button.toggled {
+    background-color: #3f4b63e5;
+
+}
+
+.video_call_box .actions button.toggled:hover {
+    background-color: #505e7ae5;
+
+}
+
+.video_call_box .actions button.toggled i {
+    display: none;
+}
+
+.video_call_box .actions button.toggled #sub {
+    display: block;
+    color: white;
+}
+
+
+.video_call_box .actions button:last-child {
+    background-color: var(--danger);
+
+}
+
+.video_call_box .actions button:last-child i {
+    color: white;
+}
+
+
+.video_call_box .actions button:last-child:hover {
+    background-color: #d65858;
+}
+
+.video_call_box .video_paused {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f141c;
+    border-radius: 6px;
+}
+
+.video_call_box .video_paused img {
+    position: relative;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
