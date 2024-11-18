@@ -32,11 +32,11 @@ CREATE TABLE IF NOT EXISTS `application` (
   `id` int NOT NULL AUTO_INCREMENT,
   `job_id` int NOT NULL,
   `freelancer_id` int NOT NULL,
-  `freelancer_cv_id` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `date` varchar(10) COLLATE utf8mb4 NOT NULL,
-  `state` varchar(60) COLLATE utf8mb4 NOT NULL DEFAULT 'ongoing',
+  `freelancer_cv_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `date` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `state` varchar(60) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'ongoing',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `application`
@@ -54,15 +54,15 @@ INSERT INTO `application` (`id`, `job_id`, `freelancer_id`, `freelancer_cv_id`, 
 
 DROP TABLE IF EXISTS `calls`;
 CREATE TABLE IF NOT EXISTS `calls` (
-  `id` varchar(20) COLLATE utf8mb4 NOT NULL,
+  `id` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
   `caller_id` int NOT NULL,
   `called_id` int NOT NULL,
-  `duration` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4 DEFAULT NULL,
-  `date` varchar(12) COLLATE utf8mb4 NOT NULL,
-  `hour` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4 NOT NULL,
-  `direction` varchar(15) COLLATE utf8mb4 NOT NULL,
-  `state` varchar(10) COLLATE utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+  `duration` varchar(10) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `date` varchar(12) CHARACTER SET utf8mb4 NOT NULL,
+  `hour` varchar(6) CHARACTER SET utf8mb4 NOT NULL,
+  `direction` varchar(15) CHARACTER SET  utf8mb4 NOT NULL,
+  `state` varchar(10) CHARACTER SET  utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `calls`
@@ -139,18 +139,18 @@ INSERT INTO `calls` (`id`, `caller_id`, `called_id`, `duration`, `date`, `hour`,
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE IF NOT EXISTS `company` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4 NOT NULL,
-  `email` varchar(80) COLLATE utf8mb4 NOT NULL,
-  `token` varchar(30) COLLATE utf8mb4 NOT NULL,
-  `pass` text COLLATE utf8mb4 NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `picture` text COLLATE utf8mb4,
-  `language` varchar(10) COLLATE utf8mb4 NOT NULL DEFAULT 'fr',
-  `location` varchar(50) COLLATE utf8mb4 DEFAULT NULL,
-  `employe` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `detail` text COLLATE utf8mb4,
+  `name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+  `email` varchar(80) CHARACTER SET utf8mb4 NOT NULL,
+  `token` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `pass` text CHARACTER SET utf8mb4 NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `picture` text,
+  `language` varchar(10) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'fr',
+  `location` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `employe` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `detail` text ,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1404511237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1404511237 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `company`
@@ -174,13 +174,13 @@ CREATE TABLE IF NOT EXISTS `contrat` (
   `id` int NOT NULL AUTO_INCREMENT,
   `free_id` int NOT NULL,
   `comp_id` int NOT NULL,
-  `resume_id` varchar(60) COLLATE utf8mb4 NOT NULL,
+  `resume_id` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
   `job_id` int NOT NULL,
-  `date` varchar(16) COLLATE utf8mb4 NOT NULL,
-  `ending` varchar(10) COLLATE utf8mb4 NOT NULL,
-  `state` varchar(15) COLLATE utf8mb4 NOT NULL DEFAULT 'en cours',
+  `date` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
+  `ending` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `state` varchar(15) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'en cours',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `contrat`
@@ -198,20 +198,20 @@ INSERT INTO `contrat` (`id`, `free_id`, `comp_id`, `resume_id`, `job_id`, `date`
 DROP TABLE IF EXISTS `freelancer`;
 CREATE TABLE IF NOT EXISTS `freelancer` (
   `id` int NOT NULL,
-  `nom` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `prenom` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `nom` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `prenom` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `age` int DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `pays` varchar(255) COLLATE utf8mb4 DEFAULT NULL,
-  `password` text COLLATE utf8mb4 NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4 NOT NULL DEFAULT 'no_user.jpg',
-  `status` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `langage` varchar(8) COLLATE utf8mb4 NOT NULL DEFAULT 'français',
+  `email` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `pays` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `password` text NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'no_user.jpg',
+  `status` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `langage` varchar(8) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'français',
   `rate` float DEFAULT NULL,
-  `plan` varchar(10) COLLATE utf8mb4 DEFAULT NULL,
-  `availability` varchar(60) COLLATE utf8mb4 NOT NULL,
+  `plan` varchar(10) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `availability` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
   `token` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `freelancer`
@@ -231,22 +231,22 @@ INSERT INTO `freelancer` (`id`, `nom`, `prenom`, `age`, `email`, `pays`, `passwo
 DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE IF NOT EXISTS `jobs` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(60) COLLATE utf8mb4 NOT NULL,
-  `job_category` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `job_sub_category` varchar(60) COLLATE utf8mb4 NOT NULL,
-  `content` text COLLATE utf8mb4 NOT NULL,
-  `currency` varchar(60) COLLATE utf8mb4 NOT NULL,
+  `title` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
+  `job_category` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `job_sub_category` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
+  `content` text NOT NULL,
+  `currency` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
   `salary` double UNSIGNED NOT NULL,
-  `job_type` varchar(15) COLLATE utf8mb4 NOT NULL,
-  `skills` text COLLATE utf8mb4 NOT NULL,
-  `experience` varchar(20) COLLATE utf8mb4 NOT NULL,
-  `post_date` varchar(20) COLLATE utf8mb4 NOT NULL,
-  `expire_date` varchar(20) COLLATE utf8mb4 NOT NULL,
-  `frequence` varchar(20) COLLATE utf8mb4 DEFAULT NULL,
+  `job_type` varchar(15) CHARACTER SET utf8mb4 NOT NULL,
+  `skills` text NOT NULL,
+  `experience` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `post_date` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `expire_date` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `frequence` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL,
   `applicants` int NOT NULL,
   `company_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jobs`
@@ -269,10 +269,10 @@ INSERT INTO `jobs` (`id`, `title`, `job_category`, `job_sub_category`, `content`
 
 DROP TABLE IF EXISTS `job_category`;
 CREATE TABLE IF NOT EXISTS `job_category` (
-  `id` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `label` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `picture` varchar(255) COLLATE utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+  `id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `label` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `picture` varchar(255) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `job_category`
@@ -297,10 +297,10 @@ INSERT INTO `job_category` (`id`, `label`, `picture`) VALUES
 
 DROP TABLE IF EXISTS `job_sub_category`;
 CREATE TABLE IF NOT EXISTS `job_sub_category` (
-  `id` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `label` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `big_cat_id` varchar(255) COLLATE utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+  `id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `label` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `big_cat_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `job_sub_category`
@@ -358,16 +358,16 @@ DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `msg_id` int NOT NULL AUTO_INCREMENT,
   `incoming_msg_id` int NOT NULL,
-  `msg` text COLLATE utf8mb4 NOT NULL,
+  `msg` text NOT NULL,
   `outgoing_msg_id` int NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `path` varchar(255) COLLATE utf8mb4 DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `path` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `size` int DEFAULT NULL,
-  `state` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `time` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `date` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `state` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `time` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `date` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`msg_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `message`
@@ -451,15 +451,15 @@ INSERT INTO `message` (`msg_id`, `incoming_msg_id`, `msg`, `outgoing_msg_id`, `t
 
 DROP TABLE IF EXISTS `resume`;
 CREATE TABLE IF NOT EXISTS `resume` (
-  `id` varchar(500) COLLATE utf8mb4 NOT NULL,
+  `id` varchar(500) CHARACTER SET utf8mb4 NOT NULL,
   `user_id` int NOT NULL,
-  `position` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `category` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `sous_category` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `bio` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `date` varchar(15) COLLATE utf8mb4 NOT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `sous_category` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `bio` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `date` varchar(15) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resume`
@@ -479,15 +479,15 @@ INSERT INTO `resume` (`id`, `user_id`, `position`, `category`, `sous_category`, 
 DROP TABLE IF EXISTS `resume_education`;
 CREATE TABLE IF NOT EXISTS `resume_education` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `degree` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `starting_date` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `ending_date` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `city` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `description` text COLLATE utf8mb4 NOT NULL,
-  `resume_id` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `degree` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `starting_date` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `ending_date` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `description` text NOT NULL,
+  `resume_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resume_education`
@@ -508,15 +508,15 @@ INSERT INTO `resume_education` (`id`, `name`, `degree`, `starting_date`, `ending
 DROP TABLE IF EXISTS `resume_experience`;
 CREATE TABLE IF NOT EXISTS `resume_experience` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `position` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `company` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `starting_date` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `ending_date` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `city` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `resume_id` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `company` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `starting_date` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `ending_date` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `resume_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resume_experience`
@@ -538,11 +538,11 @@ INSERT INTO `resume_experience` (`id`, `position`, `company`, `starting_date`, `
 DROP TABLE IF EXISTS `resume_language`;
 CREATE TABLE IF NOT EXISTS `resume_language` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `level` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `resume_id` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `label` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `level` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `resume_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resume_language`
@@ -564,11 +564,11 @@ INSERT INTO `resume_language` (`id`, `label`, `level`, `resume_id`) VALUES
 DROP TABLE IF EXISTS `resume_skill`;
 CREATE TABLE IF NOT EXISTS `resume_skill` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `level` varchar(255) COLLATE utf8mb4 NOT NULL,
-  `resume_id` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `label` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `level` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `resume_id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resume_skill`
@@ -591,11 +591,11 @@ INSERT INTO `resume_skill` (`id`, `label`, `level`, `resume_id`) VALUES
 DROP TABLE IF EXISTS `task`;
 CREATE TABLE IF NOT EXISTS `task` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `date` varchar(20) COLLATE utf8mb4 NOT NULL,
-  `event` varchar(255) COLLATE utf8mb4 NOT NULL,
+  `date` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `event` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `person_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `task`
@@ -616,7 +616,7 @@ CREATE TABLE IF NOT EXISTS `whishlist` (
   `job_id` int NOT NULL,
   `free_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `whishlist`
