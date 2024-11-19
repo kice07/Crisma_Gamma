@@ -490,49 +490,9 @@
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="main_assets/js/main.js"></script>
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
-        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
-        crossorigin="anonymous"></script>
 
 
-    <script>
-        // var form = document.getElementById("form");
-        // var messages = document.getElementById("messages")
-        document.addEventListener('DOMContentLoaded', function () {
-            // Fonction pour récupérer un cookie par son nom
-           
-            const socket = io('https://crismawork.com:3000', {
-                auth: {
-                    token: 'crisma_token'
-                },
-                transports: ['websocket'], // Assurez-vous d'utiliser le transport WebSocket pour des connexions plus persistantes
-                reconnection: true, // Activer la reconnexion automatique
-                reconnectionAttempts: Infinity, // Tenter de se reconnecter indéfiniment
-                reconnectionDelay: 1000, // Délai entre les tentatives de reconnexion
-                reconnectionDelayMax: 5000 // Délai maximal entre les tentatives de reconnexion
-            });
 
-            socket.on('connect', () => {
-                console.log('Connected to server2');
-            });
-
-            // form.addEventListener('submit', (e) => {
-            //     e.preventDefault();
-            //     if (input.value) {
-            //         socket.emit('chat message', input.value);
-            //         input.value = '';
-            //     }
-            // });
-
-            socket.on('chat message', (msg) => {
-                const item = document.createElement('li');
-                item.textContent = msg;
-                messages.appendChild(item);
-                window.scrollTo(0, document.body.scrollHeight);
-            });
-            // Example of sending a message
-        });
-    </script>
 </body>
 
 </html>
