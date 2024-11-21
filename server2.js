@@ -22,6 +22,8 @@ const io = new Server(httpServer, {
   }
 });
 
+console.log('Database Host:', process.env.DB_HOST);
+
 const db = await mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
