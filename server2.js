@@ -23,6 +23,7 @@ const io = new Server(httpServer, {
 });
 
 console.log('Database Host:', process.env.DB_HOST);
+console.log("database :" , process.env.DB_DATABASE)
 
 const db = await mysql.createConnection({
   host: process.env.DB_HOST,
@@ -31,6 +32,7 @@ const db = await mysql.createConnection({
   database: process.env.DB_DATABASE,
 });
 
+console.log(db)
 
 var users = [];
 function getFormattedDate() {
