@@ -34,7 +34,7 @@ $thumbnail = mysqli_fetch_assoc($thumbnail_query);
 
     <!-- Navbar -->
     <div class="topNav">
-    <img src="admin_dashboard_assets/images/other/logo_strokes.png" class="stroke" alt="">
+        <img src="admin_dashboard_assets/images/other/logo_strokes.png" class="stroke" alt="">
         <?php include("navbar.php") ?>
         <div class="banner">
             <h3>Discutez avec de potentiels employé</h3>
