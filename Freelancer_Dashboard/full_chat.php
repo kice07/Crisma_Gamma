@@ -3,7 +3,7 @@
 include("../config.php");
 session_start();
 $id = $_SESSION['unique_freelancer_id'];
-$thumbnail_query = mysqli_query($conn, "SELECT image FROM freelancer WHERE id=$id");
+$thumbnail_query = mysqli_query($conn, "SELECT image FROM freelancer WHERE id= '{$id}'");
 $thumbnail = mysqli_fetch_assoc($thumbnail_query);
 ?>
 <!DOCTYPE html>
