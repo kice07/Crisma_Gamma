@@ -3,7 +3,7 @@
 include("../config.php");
 session_start();
 $id = $_SESSION['unique_company_id'];
-$thumbnail_query = mysqli_query($conn, "SELECT picture FROM company WHERE id = {$id}");
+$thumbnail_query = mysqli_query($conn, "SELECT picture FROM company WHERE id = '{$id}'");
 $thumbnail = mysqli_fetch_assoc($thumbnail_query);
 ?>
 
