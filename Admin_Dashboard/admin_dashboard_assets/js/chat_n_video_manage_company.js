@@ -312,7 +312,7 @@ function buidlContractMessage(msg, time) {
 }
 
 
-const socket = io('wss://crismawork.com', {
+const socket = io('https://crismawork.com', {
     auth: {
         token: 'crisma_token'
     },
