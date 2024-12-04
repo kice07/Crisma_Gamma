@@ -731,7 +731,7 @@ $thumbnail = mysqli_fetch_assoc($thumbnail_query);
         integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
         crossorigin="anonymous"></script>
     <script src='../main_assets/js/agora-rtm-sdk-1.4.4.js'></script>
-    <script src="admin_dashboard_assets/js/chat_n_video_manage_company.js"></script>
+    <script src="admin_dashboard_assets/js/chat_video_manage_company.js"></script>
 </body>
 
 </html>
