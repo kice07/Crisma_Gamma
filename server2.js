@@ -17,7 +17,7 @@ const httpServer = http.createServer(app);
 // Configurer Socket.IO avec CORS pour accepter les connexions locales
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://crismawork.com:3001", // Permet les connexions depuis l'URL local
+    origin: "https://crismawork.com:3000", // Permet les connexions depuis l'URL local
     methods: ["GET", "POST"],
   }
 });
