@@ -12,7 +12,7 @@ $thumbnail = mysqli_fetch_assoc($thumbnail_query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="freelancer_dashboard_assets/css/final_vers_chat_free.css">
+    <link rel="stylesheet" href="freelancer_dashboard_assets/css/chat_freelancer.css">
     <link rel="stylesheet" href="freelancer_dashboard_assets/css/navbar.css">
     <link rel="stylesheet" href="../main_assets/css/video_call_both_UI.css">
 
