@@ -421,7 +421,7 @@ io.on('connection', (socket) => {
     console.log(callerInfo[0].picture);
 
     var sendTo = users.find(user => user.id === data.calledId);
-
+    console.log(sendTo)
     if (sendTo) {
       io.to(sendTo.socketId).emit('upcoming call', {
         callerId: socket.userId,

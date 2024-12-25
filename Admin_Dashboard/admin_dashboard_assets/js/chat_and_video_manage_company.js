@@ -652,6 +652,11 @@ function videoCall(element) {
             id: roomId,
             pic: thumbnail
         });
+
+        console.log({ callerId: myId,
+            calledId: currentFreeId,
+            id: roomId,
+            pic: thumbnail})
         handleVideoCall(thumbnail, currentFreeId, currentFreeThumb, roomId, element)
     } else {
         element.classList.add("disabled");
