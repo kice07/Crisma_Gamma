@@ -392,7 +392,7 @@ socket.on('freelancers list', (freelancerList) => {
 
 //=== user connection & deconnexion
 socket.on('new user connection', (userId) => {
-    console.log("connected Id :" + userId);
+    console.log("connected comapny Id :" + userId);
     if (window.getComputedStyle(document.querySelector(".right .no_content")).display == "none") {
         var headInfos = document.querySelector(".chat_bloc .right .up .info");
         if (headInfos.getAttribute("freeId") == userId) {
